@@ -1,0 +1,29 @@
+TALL_BUILD
+v6
+r1
+cCheck dependencies
+cPhaseScriptExecution CMake\ Rules /Users/yanzixu/Documents/LazGUI/BUILD/LazGUI.build/Release/ALL_BUILD.build/Script-67D59977ADD84E42BA7ACE8C.sh
+
+N/Users/yanzixu/Documents/LazGUI/BUILD/LazGUI.build/Release/ALL_BUILD.build/Script-67D59977ADD84E42BA7ACE8C.sh
+c000000005467364500000000000000A4
+t1416050245
+s164
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciese09da0c56d17ba41^b3cea0c56d17ba41^---0#1#1#--18"Check dependencies36"84BF1473-AD25-4E33-BE5F-0DEB14249ADC-
+
+CPhaseScriptExecution CMake\ Rules /Users/yanzixu/Documents/LazGUI/BUILD/LazGUI.build/Release/ALL_BUILD.build/Script-67D59977ADD84E42BA7ACE8C.sh
+s437743045.628922
+e437743045.643002
+r1
+xPhaseScriptExecution
+xCMake Rules
+x/Users/yanzixu/Documents/LazGUI/BUILD/LazGUI.build/Release/ALL_BUILD.build/Script-67D59977ADD84E42BA7ACE8C.sh
+oecho ""
+o
+oecho Build\ all\ projects
+oBuild all projects
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Run custom shell script 'CMake Rules'111"PhaseScriptExecution CMake\ Rules BUILD/LazGUI.build/Release/ALL_BUILD.build/Script-67D59977ADD84E42BA7ACE8C.sh2a37a1c56d17ba41^499da4c56d17ba41^-54"echo ""echo Build\ all\ projectsBuild all projects3(21%IDEActivityLogMessage2@8"echo ""-437743045#0#8#-0#-----2@26"echo Build\ all\ projects-437743045#9#26#-0#-----2@19"Build all projects-437743045#35#19#-0#-----0#0#1#--276"PhaseScriptExecution CMake\ Rules BUILD/LazGUI.build/Release/ALL_BUILD.build/Script-67D59977ADD84E42BA7ACE8C.sh    cd /Users/yanzixu/Documents/LazGUI    /bin/sh -c /Users/yanzixu/Documents/LazGUI/BUILD/LazGUI.build/Release/ALL_BUILD.build/Script-67D59977ADD84E42BA7ACE8C.sh36"97305F7E-B06C-41BB-90B8-DA9EB79F545F-
+bB4EF0803-BF4F-44ED-9FAC-01DB1759ED64
+

@@ -1,0 +1,3 @@
+/Users/yanzixu/Documents/LazGUI/BUILD/CMakeFiles/ALL_BUILD.dir
+/Users/yanzixu/Documents/LazGUI/BUILD/CMakeFiles/LazGUI.dir
+/Users/yanzixu/Documents/LazGUI/BUILD/CMakeFiles/ZERO_CHECK.dir

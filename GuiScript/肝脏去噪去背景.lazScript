@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Script>
+    <Procudure0 name="OPT_GDCM_IN" inVars="" inDefValue="" outVars="原图" outDefValue="NULL" />
+    <Procudure1 name="OPT_READ_MHD_ITK" inVars="" inDefValue="" outVars="肝脏Mask" outDefValue="NULL" />
+    <Procudure2 name="OPT_APPLY_WWWL" inVars="肝脏Mask,窗位,窗宽" inDefValue="NULL,175,175" outVars="做了窗宽窗位的肝脏mask" outDefValue="NULL" />
+    <Procudure3 name="OPT_APPLY_MASK_3D" inVars="原图,做了窗宽窗位的肝脏mask" inDefValue="NULL,NULL" outVars="只有肝脏的原图" outDefValue="NULL" />
+    <Procudure4 name="ALG_COMPUTE_AABB_3D" inVars="只有肝脏的原图" inDefValue="NULL" outVars="xMM,yMM,zMM" outDefValue="NULL,NULL,NULL" />
+    <Procudure5 name="ALG_APPLY_ROI_3D" inVars="只有肝脏的原图,xMM,yMM,zMM" inDefValue="NULL,POINT2D_0_0,POINT2D_0_0,POINT2D_0_0" outVars="ROI后肝脏原图" outDefValue="NULL" />
+    <Procudure6 name="ALG_HIST_FROM_3D_OPENCV_IMAGE" inVars="ROI后肝脏原图" inDefValue="NULL" outVars="直方图" outDefValue="NULL" />
+    <Procudure7 name="ALG_HIST_CLIP" inVars="直方图,PROC_7IN_1,PROC_7IN_2" inDefValue="NULL,5,255" outVars="直方图5-255" outDefValue="NULL" />
+    <Procudure8 name="ALG_HIST_GAUSSIAN" inVars="直方图5-255" inDefValue="NULL" outVars="mean,variance" outDefValue="NULL,NULL" />
+    <Procudure9 name="ALG_VES_FILL_BLANK" inVars="ROI后肝脏原图,mean" inDefValue="NULL,128.0" outVars="填充后肝脏" outDefValue="NULL" />
+    <Procudure10 name="ALG_DENOISING_MEDIAN_3D" inVars="填充后肝脏,PROC_10IN_1,PROC_10IN_2" inDefValue="NULL,61,1" outVars="背景" outDefValue="NULL" />
+    <Procudure11 name="ALG_MORPHOLOGICAL_3D" inVars="背景,PROC_11IN_1,PROC_11IN_2" inDefValue="NULL,2,8" outVars="做了开算子的背景" outDefValue="NULL" />
+    <Procudure12 name="ALG_ADD_IMAGE_3D" inVars="填充后肝脏,做了开算子的背景,PROC_12IN_2,PROC_12IN_3" inDefValue="NULL,NULL,1,-1" outVars="去掉背景的肝脏" outDefValue="NULL" />
+    <Procudure13 name="ALG_DENOISING_MEDIAN_3D" inVars="去掉背景的肝脏,PROC_13IN_1,PROC_13IN_2" inDefValue="NULL,5,1" outVars="去噪音去背景结果" outDefValue="NULL" />
+</Script>

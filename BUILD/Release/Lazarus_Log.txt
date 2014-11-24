@@ -1,0 +1,855 @@
+======Project Lazarus Begin======
+==Lazarus===PreLoading Functions====
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_ACCUMULATED_HIST_FROM_2D_OPENCV_IMAGE.lazfunc
+Type : Algorithm
+Name = ALG_ACCUMULATED_HIST_FROM_2D_OPENCV_IMAGE
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : USERDEF_HISTOGRAM DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_ADD_IMAGE_3D.lazfunc
+Type : Algorithm
+Name = ALG_ADD_IMAGE_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 0.5
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 0.5
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_ADJUST_GAP_2D.lazfunc
+Type : Algorithm
+Name = ALG_ADJUST_GAP_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 10.0
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_ADJUST_GAP_3D.lazfunc
+Type : Algorithm
+Name = ALG_ADJUST_GAP_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 10.0
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_APPLY_AABB_ITK.lazfunc
+Type : Algorithm
+Name = ALG_APPLY_AABB_ITK
+Var: IOType: IN ObjectType : IMAGE_3D_ITK DefaultValue : 
+Var: IOType: IN ObjectType : POINT_2D_OPENCV_POINT2D DefaultValue : POINT2D_0_0
+Var: IOType: IN ObjectType : POINT_2D_OPENCV_POINT2D DefaultValue : POINT2D_0_0
+Var: IOType: IN ObjectType : POINT_2D_OPENCV_POINT2D DefaultValue : POINT2D_0_0
+Var: IOType: OUT ObjectType : IMAGE_3D_ITK DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_APPLY_ROI_2D.lazfunc
+Type : Algorithm
+Name = ALG_APPLY_ROI_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : POINT_2D_OPENCV_POINT2D DefaultValue : POINT2D_0_0
+Var: IOType: IN ObjectType : POINT_2D_OPENCV_POINT2D DefaultValue : POINT2D_0_0
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_APPLY_ROI_3D.lazfunc
+Type : Algorithm
+Name = ALG_APPLY_ROI_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : POINT_2D_OPENCV_POINT2D DefaultValue : POINT2D_0_0
+Var: IOType: IN ObjectType : POINT_2D_OPENCV_POINT2D DefaultValue : POINT2D_0_0
+Var: IOType: IN ObjectType : POINT_2D_OPENCV_POINT2D DefaultValue : POINT2D_0_0
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_BKG_REMOVAL_3D.lazfunc
+Type : Algorithm
+Name = ALG_BKG_REMOVAL_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_BOX_FILTER_2D.lazfunc
+Type : Algorithm
+Name = ALG_BOX_FILTER_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 10
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 10
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_CHAN_VESE_2D.lazfunc
+Type : Algorithm
+Name = ALG_CHAN_VESE_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_CLAMP_IMAGE_3D.lazfunc
+Type : Algorithm
+Name = ALG_CLAMP_IMAGE_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 0
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 255
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 0
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 0
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_COMPRESS.lazfunc
+Type : Algorithm
+Name = ALG_COMPRESS
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_COMPUTE_AABB_3D.lazfunc
+Type : Algorithm
+Name = ALG_COMPUTE_AABB_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : POINT_2D_OPENCV_POINT2D DefaultValue : POINT2D_0_0
+Var: IOType: OUT ObjectType : POINT_2D_OPENCV_POINT2D DefaultValue : POINT2D_0_0
+Var: IOType: OUT ObjectType : POINT_2D_OPENCV_POINT2D DefaultValue : POINT2D_0_0
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_CONSTRUCT_3D_SEG.lazfunc
+Type : Algorithm
+Name = ALG_CONSTRUCT_3D_SEG
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : GENERIC_STACK DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_DENOISING_GUASSIAN_3D.lazfunc
+Type : Algorithm
+Name = ALG_DENOISING_GAUSSIAN_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 3
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 3
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 1
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_DENOISING_MEDIAN_3D.lazfunc
+Type : Algorithm
+Name = ALG_DENOISING_MEDIAN_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 3
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 5
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_DIFFUSION_GAUSSIAN_2D.lazfunc
+Type : Algorithm
+Name = ALG_DIFFUSION_GAUSSIAN_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 3
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 3
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_DILATION_2D.lazfunc
+Type : Algorithm
+Name = ALG_DILATION_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : CROSS_3_3
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_DISTANCE_MAP_2D.lazfunc
+Type : Algorithm
+Name = ALG_DISTANCE_MAP_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_DISTANCE_MAP_3D.lazfunc
+Type : Algorithm
+Name = ALG_DISTANCE_MAP_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 0
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_DOWNSAMPLING_2D.lazfunc
+Type : Algorithm
+Name = ALG_DONWSAMPLING_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 0.5
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 0.5
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_DOWNSAMPLING_3D.lazfunc
+Type : Algorithm
+Name = ALG_DOWNSAMPLING_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 1
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 0.5
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 0.5
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 0.5
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_EROSION_2D.lazfunc
+Type : Algorithm
+Name = ALG_EROSION_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : CROSS_3_3
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_GRADIENT_2D.lazfunc
+Type : Algorithm
+Name = ALG_GRADIENT_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 0
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_GRADIENT_3D.lazfunc
+Type : Algorithm
+Name = ALG_GRADIENT_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 0
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_GRAPH_CUT_2D.lazfunc
+Type : Algorithm
+Name = ALG_GRAPH_CUT_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_GRAPH_CUT_3D.lazfunc
+Type : Algorithm
+Name = ALG_GRAPH_CUT_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_HIST_CLIP.lazfunc
+Type : Algorithm
+Name = ALG_HIST_CLIP
+Var: IOType: IN ObjectType : USERDEF_HISTOGRAM DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 0
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 255
+Var: IOType: OUT ObjectType : USERDEF_HISTOGRAM DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_HIST_CLIP_FORWARD_PERSENTAGE.lazfunc
+Type : Algorithm
+Name = ALG_HIST_CLIP_FORWARD_PERSENTAGE
+Var: IOType: IN ObjectType : USERDEF_HISTOGRAM DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 0.0
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: OUT ObjectType : USERDEF_HISTOGRAM DefaultValue : 
+Var: IOType: OUT ObjectType : NUMERIC_UCHAR DefaultValue : 
+Var: IOType: OUT ObjectType : NUMERIC_UCHAR DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_HIST_EQUALIZATION_2D.lazfunc
+Type : Algorithm
+Name = ALG_HIST_EQUALIZATION_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_HIST_FROM_2D_OPENCV_IMAGE.lazfunc
+Type : Algorithm
+Name = ALG_HIST_FROM_2D_OPENCV_IMAGE
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : USERDEF_HISTOGRAM DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_HIST_FROM_3D_OPENCV_IMAGE.lazfunc
+Type : Algorithm
+Name = ALG_HIST_FROM_3D_OPENCV_IMAGE
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : USERDEF_HISTOGRAM DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_HIST_GAUSSIAN.lazfunc
+Type : Algorithm
+Name = ALG_HIST_GAUSSIAN
+Var: IOType: IN ObjectType : USERDEF_HISTOGRAM DefaultValue : 
+Var: IOType: OUT ObjectType : NUMERIC_DOUBLE DefaultValue : 
+Var: IOType: OUT ObjectType : NUMERIC_DOUBLE DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_INTENSITY_PROJECTION_3D.lazfunc
+Type : Algorithm
+Name = ALG_INTENSITY_PROJECTION_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 0
+Var: IOType: IN ObjectType : NUMERIC_INT DefaultValue : 2
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_INTERPOLATION.lazfunc
+Type : Algorithm
+Name = ALG_INTERPOLATION
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 2.0
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_KMEANS_2D.lazfunc
+Type : Algorithm
+Name = ALG_KMEANS_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 5
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_KMEANS_POSITION_2D.lazfunc
+Type : Algorithm
+Name = ALG_KMEANS_POSITION_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 5
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_MARCHINGCUBES.lazfunc
+Type : Algorithm
+Name = ALG_MARCHINGCUBES
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: OUT ObjectType : USERDEF_MESH DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_MEDIALNESS_3D.lazfunc
+Type : Algorithm
+Name = ALG_MEDIALNESS_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 0
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 5.0
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_MORPHOLOGICAL_3D.lazfunc
+Type : Algorithm
+Name = ALG_MORPHOLOGICAL_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 0
+Var: IOType: IN ObjectType : NUMERIC_INT DefaultValue : 1
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_MORPHOLOGICAL_SKELETON_2D.lazfunc
+Type : Algorithm
+Name = ALG_MORPHOLOGICAL_SKELETON_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_NLMEANS_2D.lazfunc
+Type : Algorithm
+Name = ALG_NLMEANS_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_FLOAT DefaultValue : 3.0
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_OTSU_3D.lazfunc
+Type : Algorithm
+Name = ALG_OTSU_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_PCA_2D.lazfunc
+Type : Algorithm
+Name = ALG_PCA_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 0
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 0
+Var: IOType: IN ObjectType : NUMERIC_INT DefaultValue : 1
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 0.5
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_PCA_3D.lazfunc
+Type : Algorithm
+Name = ALG_PCA_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 0
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 0
+Var: IOType: IN ObjectType : NUMERIC_INT DefaultValue : 1
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 0.5
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_PERONA_MALIK_2D.lazfunc
+Type : Algorithm
+Name = ALG_PERONA_MALIK_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 0.025
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 2.0
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 10
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_RADIAL_SYMMETRY_TRANSFORM_2D.lazfunc
+Type : Algorithm
+Name = ALG_RADIAL_SYMMETRY_TRANSFORM_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 2.5
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 0.0
+Var: IOType: IN ObjectType : POINT_2D_OPENCV_POINT2D DefaultValue : POINT_1_6
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 2.0
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_RADIAL_SYMMETRY_TRANSFORM_3D.lazfunc
+Type : Algorithm
+Name = ALG_RADIAL_SYMMETRY_TRANSFORM_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 2.5
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 0.0
+Var: IOType: IN ObjectType : POINT_2D_OPENCV_POINT2D DefaultValue : POINT_1_6
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 2.0
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_REGION_GROWING_3D.lazfunc
+Type : Algorithm
+Name = ALG_REGION_GROWING_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : POINT_3D_OPENCV_POINT3D DefaultValue : POINT3D_0_0_0
+Var: IOType: IN ObjectType : NUMERIC_INT DefaultValue : 0
+Var: IOType: IN ObjectType : NUMERIC_INT DefaultValue : 255
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_RESAMPLE_IMAGE_3D.lazfunc
+Type : Algorithm
+Name = ALG_RESAMPLE_IMAGE_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 0
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 255
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_ROF_2D.lazfunc
+Type : Algorithm
+Name = ALG_ROF_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 10
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_SNAKE_CV_2D.lazfunc
+Type : Algorithm
+Name = ALG_SNAKE_CV_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_SPARSE_RECOVERY.lazfunc
+Type : Algorithm
+Name = ALG_SPARSE_RECOVERY
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_STRING DefaultValue : newDict.dict
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_SPARSE_RECOVERY_3D.lazfunc
+Type : Algorithm
+Name = ALG_SPARSE_RECOVERY_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_SUPER_PIXEL_2D.lazfunc
+Type : Algorithm
+Name = ALG_SUPER_PIXEL_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 50
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_SVM_PREDICT.lazfunc
+Type : Algorithm
+Name = ALG_SVM_PREDICT
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : GENERIC_STACK DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_STRING DefaultValue : VesselModel.model
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_SVM_TRAIN.lazfunc
+Type : Algorithm
+Name = ALG_SVM_TRAIN
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : GENERIC_STACK DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_INT DefaultValue : 1000
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: IN ObjectType : NUMERIC_STRING DefaultValue : VesselModel
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_TRAIN_DIC_3D.lazfunc
+Type : Algorithm
+Name = ALG_TRAIN_DIC_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_TRAIN_DICTIONARY.lazfunc
+Type : Algorithm
+Name = ALG_TRAIN_DICTIONARY
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_INT DefaultValue : 50
+Var: IOType: IN ObjectType : NUMERIC_STRING DefaultValue : newDict.dict
+Var: IOType: OUT ObjectType : NUMERIC_STRING DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_USERDEF_2D.lazfunc
+Type : Algorithm
+Name = ALG_USERDEF_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_VES_COMPUTE_HEPATIC_AND_PORTAL.lazfunc
+Type : Algorithm
+Name = ALG_VES_COMPUTE_HEPATIC_AND_PORTAL
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_VES_FILL_BLANK.lazfunc
+Type : Algorithm
+Name = ALG_VES_FILL_BLANK
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 128.0
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_VES_REMOVE_SMALL_BRANCHES.lazfunc
+Type : Algorithm
+Name = ALG_VES_REMOVE_SMALL_BRANCHES
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_VES_VESSEL_REPAIR.lazfunc
+Type : Algorithm
+Name = ALG_VES_VESSEL_REPAIR
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 0
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/ALG_VESSELNESS_3D.lazfunc
+Type : Algorithm
+Name = ALG_VESSELNESS_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 1.0
+Var: IOType: IN ObjectType : NUMERIC_DOUBLE DefaultValue : 10.0
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_ADJUST_MASK_WND.lazfunc
+Type : Operation
+Name = OPT_ADJUST_MASK_WND
+Var: IOType: IN ObjectType : IMAGE_3D_ITK DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_ADJUST_THRES_2D_WND.lazfunc
+Type : Operation
+Name = OPT_ADJUST_THRES_2D_WND
+Var: IOType: IN ObjectType : WINDOW_2D_OPENCV_2DIMAGE DefaultValue : 
+Var: IOType: OUT ObjectType : NUMERIC_UCHAR DefaultValue : 
+Var: IOType: OUT ObjectType : NUMERIC_UCHAR DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_APPLY_MASK_2D.lazfunc
+Type : Operation
+Name = OPT_APPLY_MASK_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_APPLY_MASK_3D.lazfunc
+Type : Operation
+Name = OPT_APPLY_MASK_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_APPLY_SEGMENT_2D.lazfunc
+Type : Operation
+Name = OPT_APPLY_SEGMENT_2D
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC3 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_APPLY_WWWL.lazfunc
+Type : Operation
+Name = OPT_APPLY_WWWL
+Var: IOType: IN ObjectType : IMAGE_3D_ITK DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_INT DefaultValue : 175
+Var: IOType: IN ObjectType : NUMERIC_INT DefaultValue : 175
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_CREATE_GE_WINDOW.lazfunc
+Type : Operation
+Name = OPT_CREATE_GE_WINDOW
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_CREATE_GENERIC_STACK.lazfunc
+Type : Operation
+Name = OPT_CREATE_GENERIC_STACK
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : GENERIC_STACK DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_CREATE_HEPATIC_AND_PORTAL_WINDOW.lazfunc
+Type : Operation
+Name = OPT_CREATE_HEPATIC_AND_PORTAL_WINDOW
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_CREATE_WND_2D_COLOR_IMAGE.lazfunc
+Type : Operation
+Name = OPT_CREATE_WND_2D_COLOR_IMAGE
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC3 DefaultValue : 
+Var: IOType: OUT ObjectType : WINDOW_2D_OPENCV_2DIMAGE DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_CREATE_WND_2DIMAGE.lazfunc
+Type : Operation
+Name = OPT_CREATE_WND_2DIMAGE
+Var: IOType: IN ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : WINDOW_2D_OPENCV_2DIMAGE DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_CREATE_WND_3D_WITH_SEGMENTATION_RESULT.lazfunc
+Type : Operation
+Name = OPT_CREATE_WND_3D_WITH_SEGMENTATION_RESULT
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : WINDOW_2D_OPENCV_3DIMAGE DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_CREATE_WND_3DIMAGE.lazfunc
+Type : Operation
+Name = OPT_CREATE_WND_3DIMAGE
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : WINDOW_2D_OPENCV_3DIMAGE DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_GDCM_IN.lazfunc
+Type : Operation
+Name = OPT_GDCM_IN
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_GET_MASK_2D_FROM_2D_WND.lazfunc
+Type : Operation
+Name = OPT_GET_MASK_2D_FROM_2D_WND
+Var: IOType: IN ObjectType : WINDOW_2D_OPENCV_2DIMAGE DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_GET_MASK_3D_FROM_3D_WND.lazfunc
+Type : Operation
+Name = OPT_GET_MASK_3D_FROM_3D_WND
+Var: IOType: IN ObjectType : WINDOW_2D_OPENCV_3DIMAGE DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_MASK_VISUALIZE.lazfunc
+Type : Operation
+Name = OPT_MASK_VISUALIZE
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_READ_2D_GRAY_IMAGE.lazfunc
+Type : Operation
+Name = OPT_READ_2D_GRAY_IMAGE
+Var: IOType: OUT ObjectType : IMAGE_2D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_READ_DICOM_ITK.lazfunc
+Type : Operation
+Name = OPT_READ_DICOM_ITK
+Var: IOType: OUT ObjectType : IMAGE_3D_ITK DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_READ_MHD_ITK.lazfunc
+Type : Operation
+Name = OPT_READ_MHD_ITK
+Var: IOType: OUT ObjectType : IMAGE_3D_ITK DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_READ_SERIED_IMAGES.lazfunc
+Type : Operation
+Name = OPT_READ_SERIES_IMAGES
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_SAVE_3D_IMAGE_TO_BMPS.lazfunc
+Type : Operation
+Name = OPT_SAVE_3D_IMAGE_TO_BMPS
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_SAVE_MHD.lazfunc
+Type : Operation
+Name = OPT_SAVE_MHD
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_SHOW_HIST.lazfunc
+Type : Operation
+Name = OPT_SHOW_HIST
+Var: IOType: IN ObjectType : USERDEF_HISTOGRAM DefaultValue : 
+Var: IOType: OUT ObjectType : WINDOW_2D_HISTOGRAM_2DIMAGE DefaultValue : 
+Read Finished.
+Open FileName: /Users/yanzixu/Downloads/Programs/Sources/LazFunctions/OPT_TO_MASK_3D.lazfunc
+Type : Operation
+Name = OPT_TO_MASK_3D
+Var: IOType: IN ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Var: IOType: IN ObjectType : NUMERIC_UCHAR DefaultValue : 1
+Var: IOType: OUT ObjectType : IMAGE_3D_OPENCV_8UC1 DefaultValue : 
+Read Finished.
+==Lazarus===PreLoading Functions Finished====
+>>Begin Creating Instance Name : 原图
+>>Instance Created : 原图
+=====Procedure : OPT_GDCM_IN begin precheck=====
+>>Instance FOUND
+Instance Name = 原图
+   Already Exist
+>>Begin Searching for Instance Name : 原图
+>>Instance FOUND
+>>Begin Searching for Instance Name : 原图
+>>Instance FOUND
+=====Check Complete. NO ERROR detected=====
+>>Begin Searching for Instance Name : 原图
+>>Instance FOUND
+>>Begin Creating Instance Name : 肝脏Mask
+>>Instance Created : 肝脏Mask
+=====Procedure : OPT_READ_MHD_ITK begin precheck=====
+>>Instance FOUND
+Instance Name = 肝脏Mask
+   Already Exist
+>>Begin Searching for Instance Name : 肝脏Mask
+>>Instance FOUND
+>>Begin Searching for Instance Name : 肝脏Mask
+>>Instance FOUND
+=====Check Complete. NO ERROR detected=====
+>>Begin Searching for Instance Name : 肝脏Mask
+>>Instance FOUND
+>>Instance FOUND
+Instance Name = 肝脏Mask
+   Already Exist
+>>Begin Searching for Instance Name : 肝脏Mask
+>>Instance FOUND
+>>Begin Creating Instance Name : 窗位
+>>Instance Created : 窗位
+>>Begin Searching for Instance Name : 窗位
+>>Instance FOUND
+>>Begin Creating Instance Name : 窗宽
+>>Instance Created : 窗宽
+>>Begin Searching for Instance Name : 窗宽
+>>Instance FOUND
+>>Begin Creating Instance Name : 做了窗宽窗位的肝脏mask
+>>Instance Created : 做了窗宽窗位的肝脏mask
+=====Procedure : OPT_APPLY_WWWL begin precheck=====
+>>Instance FOUND
+Instance Name = 肝脏Mask
+   Already Exist
+>>Begin Searching for Instance Name : 肝脏Mask
+>>Instance FOUND
+>>Begin Searching for Instance Name : 肝脏Mask
+>>Instance FOUND
+>>Instance FOUND
+Instance Name = 窗位
+   Already Exist
+>>Begin Searching for Instance Name : 窗位
+>>Instance FOUND
+>>Begin Searching for Instance Name : 窗位
+>>Instance FOUND
+>>Instance FOUND
+Instance Name = 窗宽
+   Already Exist
+>>Begin Searching for Instance Name : 窗宽
+>>Instance FOUND
+>>Begin Searching for Instance Name : 窗宽
+>>Instance FOUND
+>>Instance FOUND
+Instance Name = 做了窗宽窗位的肝脏mask
+   Already Exist
+>>Begin Searching for Instance Name : 做了窗宽窗位的肝脏mask
+>>Instance FOUND
+>>Begin Searching for Instance Name : 做了窗宽窗位的肝脏mask
+>>Instance FOUND
+=====Check Complete. NO ERROR detected=====
+>>Begin Searching for Instance Name : 肝脏Mask
+>>Instance FOUND
+>>Begin Searching for Instance Name : 窗位
+>>Instance FOUND
+>>Begin Searching for Instance Name : 窗宽
+>>Instance FOUND
+>>Begin Searching for Instance Name : 做了窗宽窗位的肝脏mask
+>>Instance FOUND
+>>Instance FOUND
+Instance Name = 原图
+   Already Exist
+>>Begin Searching for Instance Name : 原图
+>>Instance FOUND
+>>Instance FOUND
+Instance Name = 做了窗宽窗位的肝脏mask
+   Already Exist
+>>Begin Searching for Instance Name : 做了窗宽窗位的肝脏mask
+>>Instance FOUND
+>>Begin Creating Instance Name : 只有肝脏的原图
+>>Instance Created : 只有肝脏的原图
+=====Procedure : OPT_APPLY_MASK_3D begin precheck=====
+>>Instance FOUND
+Instance Name = 原图
+   Already Exist
+>>Begin Searching for Instance Name : 原图
+>>Instance FOUND
+>>Begin Searching for Instance Name : 原图
+>>Instance FOUND
+>>Instance FOUND
+Instance Name = 做了窗宽窗位的肝脏mask
+   Already Exist
+>>Begin Searching for Instance Name : 做了窗宽窗位的肝脏mask
+>>Instance FOUND
+>>Begin Searching for Instance Name : 做了窗宽窗位的肝脏mask
+>>Instance FOUND
+>>Instance FOUND
+Instance Name = 只有肝脏的原图
+   Already Exist
+>>Begin Searching for Instance Name : 只有肝脏的原图
+>>Instance FOUND
+>>Begin Searching for Instance Name : 只有肝脏的原图
+>>Instance FOUND
+=====Check Complete. NO ERROR detected=====
+>>Begin Searching for Instance Name : 原图
+>>Instance FOUND
+>>Begin Searching for Instance Name : 做了窗宽窗位的肝脏mask
+>>Instance FOUND
+>>Begin Searching for Instance Name : 只有肝脏的原图
+>>Instance FOUND
+3D mask 进入的不是mask，将强制转化
+>>Instance FOUND
+Instance Name = 只有肝脏的原图
+   Already Exist
+>>Begin Searching for Instance Name : 只有肝脏的原图
+>>Instance FOUND
+>>Begin Creating Instance Name : xMM
+>>Instance Created : xMM
+>>Begin Creating Instance Name : yMM
+>>Instance Created : yMM
+>>Begin Creating Instance Name : zMM
+>>Instance Created : zMM
+=====Procedure : ALG_COMPUTE_AABB_3D begin precheck=====
+>>Instance FOUND
+Instance Name = 只有肝脏的原图
+   Already Exist
+>>Begin Searching for Instance Name : 只有肝脏的原图
+>>Instance FOUND
+>>Begin Searching for Instance Name : 只有肝脏的原图
+>>Instance FOUND
+>>Instance FOUND
+Instance Name = xMM
+   Already Exist
+>>Begin Searching for Instance Name : xMM
+>>Instance FOUND
+>>Begin Searching for Instance Name : xMM
+>>Instance FOUND
+>>Instance FOUND
+Instance Name = yMM
+   Already Exist
+>>Begin Searching for Instance Name : yMM
+>>Instance FOUND
+>>Begin Searching for Instance Name : yMM
+>>Instance FOUND
+>>Instance FOUND
+Instance Name = zMM
+   Already Exist
+>>Begin Searching for Instance Name : zMM
+>>Instance FOUND
+>>Begin Searching for Instance Name : zMM
+>>Instance FOUND
+=====Check Complete. NO ERROR detected=====
+>>Begin Searching for Instance Name : 只有肝脏的原图
+>>Instance FOUND
+>>Begin Searching for Instance Name : xMM
+>>Instance FOUND
+>>Begin Searching for Instance Name : yMM
+>>Instance FOUND
+>>Begin Searching for Instance Name : zMM
+>>Instance FOUND
+进入计算AABB的3D图像不是二值的，将转化

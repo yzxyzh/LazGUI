@@ -1,0 +1,1386 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		8BAE096E596646D0B3A74984 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B8EB8BAB0E9049F8ACBEB269 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				A15579810FFE4B95968F8933 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		CB50DE2CE9F44907BCD29620 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8341DA5060464DBF89A6997D /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				67D59977ADD84E42BA7ACE8C /* CMake Rules */,
+			);
+			dependencies = (
+				120A9512069347C18EA4C56A /* PBXTargetDependency */,
+				20E2070458E242E49428E8B4 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		04FBFC9AC44A409E80B0306A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5087A93F37AE46FC89B1B6F9 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		11D6097F9A364F37AB65E35D /* GUITypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F79D4987CD89437388E5BB6E /* GUITypes.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		5A57B54427D142DA95BADD53 /* cvqtconverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A6236B38B5E4377B3BD994B /* cvqtconverter.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		94C79796C0324F32A67AE2C1 /* mainwindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07278FC4F85348E1AA5A3FC3 /* mainwindow.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		A063C6E123DD492AB3BBFE88 /* moc_mainwindow.cxx in Sources */ = {isa = PBXBuildFile; fileRef = F80264D19D9B40D8893B79CA /* moc_mainwindow.cxx */; settings = {COMPILER_FLAGS = ""; }; };
+		D4C7ABB18E1F4AF3A8C439D9 /* moc_AlgDialog.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 608B8B5B51244D43941269DD /* moc_AlgDialog.cxx */; settings = {COMPILER_FLAGS = ""; }; };
+		ED9462A9FC2B4542818D4330 /* AlgDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A668CC4A134D23B8240AF6 /* AlgDialog.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CC017EB2B86241EFB600ACFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4479E4E71C494E53B2AEBBE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BAE096E596646D0B3A74984;
+			remoteInfo = ZERO_CHECK;
+		};
+		D9136F3928084406BEAC8A21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4479E4E71C494E53B2AEBBE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9EBA2A9B7A645CCAF13DFE2;
+			remoteInfo = LazGUI;
+		};
+		DC34ED1C9C7A476891032FA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4479E4E71C494E53B2AEBBE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BAE096E596646D0B3A74984;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07278FC4F85348E1AA5A3FC3 /* mainwindow.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = mainwindow.cpp; sourceTree = SOURCE_ROOT; };
+		150B1DDD0AB34765A69C07A4 /* mainwindow.ui */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; path = mainwindow.ui; sourceTree = SOURCE_ROOT; };
+		45C13EDF349043DD811ED4FE /* GUITypes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = GUITypes.h; sourceTree = SOURCE_ROOT; };
+		5087A93F37AE46FC89B1B6F9 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = main.cpp; sourceTree = SOURCE_ROOT; };
+		56CF24C7DD334FA2AE60C990 /* AlgDialog.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = AlgDialog.h; sourceTree = SOURCE_ROOT; };
+		5F67C4EDEFC04E86821F4A24 /* moc_mainwindow.cxx.rule */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = moc_mainwindow.cxx.rule; path = BUILD/moc_mainwindow.cxx.rule; sourceTree = SOURCE_ROOT; };
+		608B8B5B51244D43941269DD /* moc_AlgDialog.cxx */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = moc_AlgDialog.cxx; path = BUILD/moc_AlgDialog.cxx; sourceTree = SOURCE_ROOT; };
+		66D4D4050320417E927B9034 /* ui_mainwindow.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ui_mainwindow.h; path = BUILD/ui_mainwindow.h; sourceTree = SOURCE_ROOT; };
+		6E955B75381846F0A039F3DB /* mainwindow.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = mainwindow.h; sourceTree = SOURCE_ROOT; };
+		8A6236B38B5E4377B3BD994B /* cvqtconverter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = cvqtconverter.cpp; sourceTree = SOURCE_ROOT; };
+		BB194D73EFDC403D8EFE16CC /* cvqtconverter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = cvqtconverter.h; sourceTree = SOURCE_ROOT; };
+		C4B5A14DF2AC405386451E6C /* moc_AlgDialog.cxx.rule */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = moc_AlgDialog.cxx.rule; path = BUILD/moc_AlgDialog.cxx.rule; sourceTree = SOURCE_ROOT; };
+		CCFCC49F897D4D6A97872C22 /* LazGUI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = LazGUI; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF668F194CC44820BBDB11A4 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		E4A668CC4A134D23B8240AF6 /* AlgDialog.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = AlgDialog.cpp; sourceTree = SOURCE_ROOT; };
+		F79D4987CD89437388E5BB6E /* GUITypes.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = GUITypes.cpp; sourceTree = SOURCE_ROOT; };
+		F80264D19D9B40D8893B79CA /* moc_mainwindow.cxx */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = moc_mainwindow.cxx; path = BUILD/moc_mainwindow.cxx; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		02DA4B9B85A3430DB9B157F6 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4A668CC4A134D23B8240AF6 /* AlgDialog.cpp */,
+				608B8B5B51244D43941269DD /* moc_AlgDialog.cxx */,
+				F80264D19D9B40D8893B79CA /* moc_mainwindow.cxx */,
+				F79D4987CD89437388E5BB6E /* GUITypes.cpp */,
+				8A6236B38B5E4377B3BD994B /* cvqtconverter.cpp */,
+				5087A93F37AE46FC89B1B6F9 /* main.cpp */,
+				07278FC4F85348E1AA5A3FC3 /* mainwindow.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		4A70D8CC19A54B13A686ED76 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7EE59FF9E0A74AE5B7596C22 /* ALL_BUILD */,
+				5B8DA7FC91644B6484229B89 /* LazGUI */,
+				E92273C99B5B4E66AC282377 /* ZERO_CHECK */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		5B8DA7FC91644B6484229B89 /* LazGUI */ = {
+			isa = PBXGroup;
+			children = (
+				814C60BE829F4C6D8F17DCB4 /* Header Files */,
+				02DA4B9B85A3430DB9B157F6 /* Source Files */,
+				8C251758C22746DE8016A561 /* CMake Rules */,
+				CF668F194CC44820BBDB11A4 /* CMakeLists.txt */,
+				150B1DDD0AB34765A69C07A4 /* mainwindow.ui */,
+			);
+			name = LazGUI;
+			sourceTree = "<group>";
+		};
+		7EE59FF9E0A74AE5B7596C22 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				F3E029A660154C248E491F40 /* CMake Rules */,
+				CF668F194CC44820BBDB11A4 /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		814C60BE829F4C6D8F17DCB4 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				56CF24C7DD334FA2AE60C990 /* AlgDialog.h */,
+				66D4D4050320417E927B9034 /* ui_mainwindow.h */,
+				45C13EDF349043DD811ED4FE /* GUITypes.h */,
+				BB194D73EFDC403D8EFE16CC /* cvqtconverter.h */,
+				6E955B75381846F0A039F3DB /* mainwindow.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		8C251758C22746DE8016A561 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+				C4B5A14DF2AC405386451E6C /* moc_AlgDialog.cxx.rule */,
+				5F67C4EDEFC04E86821F4A24 /* moc_mainwindow.cxx.rule */,
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		B01EA732A3FD4E2B95668714 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		CD8300C927A74D3684E4CDFD = {
+			isa = PBXGroup;
+			children = (
+				4A70D8CC19A54B13A686ED76 /* Sources */,
+				DB3150DD75F942A9AAA5C5D1 /* Resources */,
+				F2AAFBE1C5C6474194867FA0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB3150DD75F942A9AAA5C5D1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E92273C99B5B4E66AC282377 /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				B01EA732A3FD4E2B95668714 /* CMake Rules */,
+				CF668F194CC44820BBDB11A4 /* CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		F2AAFBE1C5C6474194867FA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CCFCC49F897D4D6A97872C22 /* LazGUI */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3E029A660154C248E491F40 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B9EBA2A9B7A645CCAF13DFE2 /* LazGUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A4FCA6FEC444D3193B5E225 /* Build configuration list for PBXNativeTarget "LazGUI" */;
+			buildPhases = (
+				5BFD487527ED42DD890B569E /* CMake Rules */,
+				D8AA434BC49C41D7AF7C4F5C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				008D2CFFBCB84B9B91F3DE63 /* PBXTargetDependency */,
+			);
+			name = LazGUI;
+			productName = LazGUI;
+			productReference = CCFCC49F897D4D6A97872C22 /* LazGUI */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4479E4E71C494E53B2AEBBE4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+			};
+			buildConfigurationList = E6036B399DF24144B80C01C8 /* Build configuration list for PBXProject "LazGUI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CD8300C927A74D3684E4CDFD;
+			projectDirPath = ..;
+			projectRoot = "";
+			targets = (
+				CB50DE2CE9F44907BCD29620 /* ALL_BUILD */,
+				B9EBA2A9B7A645CCAF13DFE2 /* LazGUI */,
+				8BAE096E596646D0B3A74984 /* ZERO_CHECK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5BFD487527ED42DD890B569E /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yanzixu/Documents/LazGUI/BUILD -f /Users/yanzixu/Documents/LazGUI/BUILD/CMakeScripts/LazGUI_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		67D59977ADD84E42BA7ACE8C /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yanzixu/Documents/LazGUI/BUILD -f /Users/yanzixu/Documents/LazGUI/BUILD/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		A15579810FFE4B95968F8933 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yanzixu/Documents/LazGUI/BUILD -f /Users/yanzixu/Documents/LazGUI/BUILD/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8AA434BC49C41D7AF7C4F5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED9462A9FC2B4542818D4330 /* AlgDialog.cpp in Sources */,
+				D4C7ABB18E1F4AF3A8C439D9 /* moc_AlgDialog.cxx in Sources */,
+				A063C6E123DD492AB3BBFE88 /* moc_mainwindow.cxx in Sources */,
+				11D6097F9A364F37AB65E35D /* GUITypes.cpp in Sources */,
+				5A57B54427D142DA95BADD53 /* cvqtconverter.cpp in Sources */,
+				04FBFC9AC44A409E80B0306A /* main.cpp in Sources */,
+				94C79796C0324F32A67AE2C1 /* mainwindow.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		008D2CFFBCB84B9B91F3DE63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BAE096E596646D0B3A74984 /* ZERO_CHECK */;
+			targetProxy = DC34ED1C9C7A476891032FA2 /* PBXContainerItemProxy */;
+		};
+		120A9512069347C18EA4C56A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BAE096E596646D0B3A74984 /* ZERO_CHECK */;
+			targetProxy = CC017EB2B86241EFB600ACFA /* PBXContainerItemProxy */;
+		};
+		20E2070458E242E49428E8B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9EBA2A9B7A645CCAF13DFE2 /* LazGUI */;
+			targetProxy = D9136F3928084406BEAC8A21 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		27787C23231747C4B2EED7F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					QT_GUI_LIB,
+					QT_CORE_LIB,
+					ITK_IO_FACTORY_REGISTER_MANAGER,
+					"'vtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)'",
+					"'vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)'",
+					QT_NO_DEBUG,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/yanzixu/Documents/LazGUI/BUILD/ITKIOFactoryRegistration,
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Video/IO/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Video/Filtering/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Video/Core/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/TestKernel/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Nonunit/Review/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/Watersheds/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/Voronoi/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Bridge/VTK/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/SpatialFunction/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/RegistrationMethodsv4/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/RegionGrowing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/QuadEdgeMeshFiltering/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/NeuralNetworks/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/Metricsv4/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/Optimizersv4/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/MarkovRandomFieldsClassifiers/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/LevelSetsv4/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/LabelVoting/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/KLMRegionGrowing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageFusion/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/VTK/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/TransformMatlab/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/TransformInsightLegacy/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/TransformHDF5/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/TransformBase/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/Stimulate/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/Siemens/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/RAW/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/PNG/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/PNG/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/PNG/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/NRRD/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/NrrdIO/src/NrrdIO",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/NrrdIO/src/NrrdIO",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/NIFTI/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/Meta/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/Mesh/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/MRC/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/LSM/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/TIFF/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/TIFF/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/TIFF/src/itktiff",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/TIFF/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/JPEG/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/JPEG/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/JPEG/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/HDF5/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/GIPL/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/GE/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/IPL/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/GDCM/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/CSV/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/BioRad/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/BMP/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/HDF5/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/HDF5/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/GPUThresholding/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/GPUSmoothing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/GPUPDEDeformable/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/GPUCommon/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/GPUImageFilterBase/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/GPUAnisotropicSmoothing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/GPUFiniteDifference/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/GPUCommon/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GIFTI/src/gifticlib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/NIFTI/src/nifti/znzlib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/NIFTI/src/nifti/niftilib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/MessageExchangeDefinition",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/InformationObjectDefinition",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/Common",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/DataDictionary",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/MediaStorageAndFileFormat",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/GDCM/src/gdcm/Source/Common",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/GDCM",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/OpenJPEG/src/openjpeg",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/OpenJPEG/src/openjpeg",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/FEM/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/PDEDeformable/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/FEM/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/Common/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/SpatialObjects/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/XML/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/Expat/src/expat",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/Expat/src/expat",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/Eigen/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/DisplacementField/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/DiffusionTensorImage/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Denoising/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/DeformableMesh/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Deconvolution/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/DICOMParser/src/DICOMParser",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/DICOMParser/src/DICOMParser",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Convolution/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/FFT/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Colormap/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/Classifiers/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/BioCell/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/BiasCorrection/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/Polynomials/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/AntiAlias/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/LevelSets/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/SignedDistanceFunction/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/Optimizers/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageFeature/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageSources/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageGradient/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Smoothing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageCompare/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/FastMarching/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/QuadEdgeMesh/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/DistanceMap/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/NarrowBand/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/BinaryMathematicalMorphology/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/LabelMap/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/MathematicalMorphology/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/ConnectedComponents/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Thresholding/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageLabel/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageIntensity/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Path/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageStatistics/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/SpatialObjects/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/MetaIO/src/MetaIO",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/MetaIO/src/MetaIO",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/ZLIB/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/ZLIB/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/Mesh/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/ImageBase/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/IO/ImageBase",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageCompose/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/AnisotropicSmoothing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageGrid/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/ImageFunction/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/Transform/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/Statistics/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/Netlib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/ImageAdaptors/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/CurvatureFlow/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageFilterBase/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/FiniteDifference/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/Common/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/Core/Common",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/VNLInstantiation/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/VNL/src/vxl/core",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/VNL/src/vxl/vcl",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/VNL/src/vxl/v3p/netlib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/VNL/src/vxl/core",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/VNL/src/vxl/vcl",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/VNL/src/vxl/v3p/netlib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/KWSys/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/DoubleConversion/src/double-conversion",
+					/usr/local/include/opencv,
+					/usr/local/include,
+					/Library/Frameworks/QtGui.framework/Headers,
+					/Library/Frameworks/QtCore.framework/Headers,
+					"/usr/local/include/vtk-6.1",
+					/Users/yanzixu/Documents/LazGUI/BUILD,
+					/Users/yanzixu/Downloads/Programs/Sources,
+					/Users/yanzixu/Desktop/KSVD3D,
+					/usr/local/Cellar/tinyxml/2.6.2/include,
+					/Users/yanzixu/Documents/LazGUI/Deps/glm,
+					/usr/local/Cellar/mlpack/1.0.8/include,
+					/usr/local/Cellar/libxml2/2.9.1/include/libxml2,
+					/usr/local/Cellar/armadillo/4.300.3/include,
+					/Users/yanzixu/Desktop/PCAMKL,
+				);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/usr/local/lib /usr/local/Cellar/tinyxml/2.6.2/lib /Users/yanzixu/Library/Developer/Xcode/DerivedData/KSVD3D-bdtorlzfrjvirqeaoeumrbgkytbt/Build/Products /usr/local/Cellar/mlpack/1.0.8/lib /usr/local/Cellar/libxml2/2.9.1/lib /usr/local/Cellar/armadillo/4.300.3/lib /usr/local/Cellar/boost/1.55.0_2/lib /opt/intel/composer_xe_2013_sp1.3.166/compiler/lib /opt/intel/composer_xe_2013_sp1.3.166/mkl/lib /Users/yanzixu/Library/Developer/Xcode/DerivedData/PCAMKL-aqditmltnsahnucrkafhzscxqaad/Build/Products";
+				LIBRARY_SEARCH_PATHS = (
+					"/usr/local/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					/usr/local/lib,
+					"/usr/local/Cellar/tinyxml/2.6.2/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					/usr/local/Cellar/tinyxml/2.6.2/lib,
+					"/Users/yanzixu/Library/Developer/Xcode/DerivedData/KSVD3D-bdtorlzfrjvirqeaoeumrbgkytbt/Build/Products/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					"/Users/yanzixu/Library/Developer/Xcode/DerivedData/KSVD3D-bdtorlzfrjvirqeaoeumrbgkytbt/Build/Products",
+					"/usr/local/Cellar/mlpack/1.0.8/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					/usr/local/Cellar/mlpack/1.0.8/lib,
+					"/usr/local/Cellar/libxml2/2.9.1/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					/usr/local/Cellar/libxml2/2.9.1/lib,
+					"/usr/local/Cellar/armadillo/4.300.3/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					/usr/local/Cellar/armadillo/4.300.3/lib,
+					"/usr/local/Cellar/boost/1.55.0_2/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					/usr/local/Cellar/boost/1.55.0_2/lib,
+					"/opt/intel/composer_xe_2013_sp1.3.166/compiler/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					/opt/intel/composer_xe_2013_sp1.3.166/compiler/lib,
+					"/opt/intel/composer_xe_2013_sp1.3.166/mkl/lib/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					/opt/intel/composer_xe_2013_sp1.3.166/mkl/lib,
+					"/Users/yanzixu/Library/Developer/Xcode/DerivedData/PCAMKL-aqditmltnsahnucrkafhzscxqaad/Build/Products/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+					"/Users/yanzixu/Library/Developer/Xcode/DerivedData/PCAMKL-aqditmltnsahnucrkafhzscxqaad/Build/Products",
+				);
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/usr/local/lib/libvtkalglib-6.1.1.dylib",
+					"/usr/local/lib/libvtkChartsCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonColor-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonDataModel-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonMath-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonCore-6.1.1.dylib",
+					"/usr/local/lib/libvtksys-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonMisc-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonSystem-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonTransforms-6.1.1.dylib",
+					"/usr/local/lib/libvtkInfovisCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersExtraction-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonExecutionModel-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersGeneral-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonComputationalGeometry-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersStatistics-6.1.1.dylib",
+					"/usr/local/lib/libvtkImagingFourier-6.1.1.dylib",
+					"/usr/local/lib/libvtkImagingCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingContext2D-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersGeometry-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersSources-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingFreeType-6.1.1.dylib",
+					"/usr/local/lib/libvtkfreetype-6.1.1.dylib",
+					"/usr/local/lib/libvtkzlib-6.1.1.dylib",
+					"/usr/local/lib/libvtkftgl-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingOpenGL-6.1.1.dylib",
+					"/usr/local/lib/libvtkImagingHybrid-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOImage-6.1.1.dylib",
+					"/usr/local/lib/libvtkDICOMParser-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkmetaio-6.1.1.dylib",
+					"/usr/local/lib/libvtkjpeg-6.1.1.dylib",
+					"/usr/local/lib/libvtkpng-6.1.1.dylib",
+					"/usr/local/lib/libvtktiff-6.1.1.dylib",
+					"/usr/local/lib/libvtkDomainsChemistry-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOXML-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOGeometry-6.1.1.dylib",
+					"/usr/local/lib/libvtkjsoncpp-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOXMLParser-6.1.1.dylib",
+					"/usr/local/lib/libvtkexpat-6.1.1.dylib",
+					"/usr/local/lib/libvtkexoIIc-6.1.1.dylib",
+					"/usr/local/lib/libvtkNetCDF-6.1.1.dylib",
+					"/usr/local/lib/libvtkNetCDF_cxx-6.1.1.dylib",
+					"/usr/local/lib/libvtkhdf5_hl-6.1.1.dylib",
+					"/usr/local/lib/libvtkhdf5-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersAMR-6.1.1.dylib",
+					"/usr/local/lib/libvtkParallelCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOLegacy-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersFlowPaths-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersGeneric-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersHybrid-6.1.1.dylib",
+					"/usr/local/lib/libvtkImagingSources-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersHyperTree-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersImaging-6.1.1.dylib",
+					"/usr/local/lib/libvtkImagingGeneral-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersModeling-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersParallel-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersParallelImaging-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersProgrammable-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersSelection-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersSMP-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersTexture-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersVerdict-6.1.1.dylib",
+					"/usr/local/lib/libvtkverdict-6.1.1.dylib",
+					"/usr/local/lib/libvtkGeovisCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkInfovisLayout-6.1.1.dylib",
+					"/usr/local/lib/libvtkInteractionStyle-6.1.1.dylib",
+					"/usr/local/lib/libvtkInteractionWidgets-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingAnnotation-6.1.1.dylib",
+					"/usr/local/lib/libvtkImagingColor-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingVolume-6.1.1.dylib",
+					"/usr/local/lib/libvtkViewsCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkproj4-6.1.1.dylib",
+					"/usr/local/lib/libvtkgl2ps-6.1.1.dylib",
+					"/usr/local/lib/libvtkGUISupportQt-6.1.1.dylib",
+					"/usr/local/lib/libvtkGUISupportQtOpenGL-6.1.1.dylib",
+					"/usr/local/lib/libvtkGUISupportQtSQL-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOSQL-6.1.1.dylib",
+					"/usr/local/lib/libvtksqlite-6.1.1.dylib",
+					"/usr/local/lib/libvtkGUISupportQtWebkit-6.1.1.dylib",
+					"/usr/local/lib/libvtkViewsQt-6.1.1.dylib",
+					"/usr/local/lib/libvtkViewsInfovis-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingLabel-6.1.1.dylib",
+					"/usr/local/lib/libvtkImagingMath-6.1.1.dylib",
+					"/usr/local/lib/libvtkImagingMorphological-6.1.1.dylib",
+					"/usr/local/lib/libvtkImagingStatistics-6.1.1.dylib",
+					"/usr/local/lib/libvtkImagingStencil-6.1.1.dylib",
+					"/usr/local/lib/libvtkInteractionImage-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOAMR-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOEnSight-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOExodus-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOExport-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingGL2PS-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOImport-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOInfovis-6.1.1.dylib",
+					"/usr/local/lib/libvtklibxml2-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOLSDyna-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOMINC-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOMovie-6.1.1.dylib",
+					"/usr/local/lib/libvtkoggtheora-6.1.1.dylib",
+					"/usr/local/lib/libvtkIONetCDF-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOParallel-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOPLY-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOVideo-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingFreeTypeOpenGL-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingImage-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingLIC-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingLOD-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingQt-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingVolumeAMR-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingVolumeOpenGL-6.1.1.dylib",
+					"/usr/local/lib/libvtkViewsContext2D-6.1.1.dylib",
+					"/usr/local/lib/libvtkViewsGeovis-6.1.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkdouble-conversion-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitksys-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkvnl_algo-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkvnl-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkv3p_netlib-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKCommon-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkNetlibSlatec-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKStatistics-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOImageBase-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKMesh-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkzlib-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKMetaIO-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKSpatialObjects-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKPath-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKLabelMap-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKQuadEdgeMesh-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKOptimizers-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKPolynomials-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKBiasCorrection-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKBioCell-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKDICOMParser-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKEXPAT-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOXML-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOSpatialObjects-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKFEM-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkopenjpeg-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkgdcmDICT-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkgdcmMSFF-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKznz-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKniftiio-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKgiftiio-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkhdf5_cpp-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkhdf5-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOBMP-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOBioRad-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOCSV-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOGDCM-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOIPL-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOGE-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOGIPL-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOHDF5-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkjpeg-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOJPEG-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitktiff-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOTIFF-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOLSM-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOMRC-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOMesh-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOMeta-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIONIFTI-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKNrrdIO-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIONRRD-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkpng-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOPNG-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOSiemens-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOStimulate-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOTransformBase-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOTransformHDF5-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOTransformInsightLegacy-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOTransformMatlab-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOVTK-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKKLMRegionGrowing-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKVTK-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKWatersheds-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKReview-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKVideoCore-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKVideoIO-4.5.1.dylib",
+					/usr/local/lib/libopencv_calib3d.dylib,
+					/usr/local/lib/libopencv_contrib.dylib,
+					/usr/local/lib/libopencv_core.dylib,
+					/usr/local/lib/libopencv_features2d.dylib,
+					/usr/local/lib/libopencv_flann.dylib,
+					/usr/local/lib/libopencv_gpu.dylib,
+					/usr/local/lib/libopencv_highgui.dylib,
+					/usr/local/lib/libopencv_imgproc.dylib,
+					/usr/local/lib/libopencv_legacy.dylib,
+					/usr/local/lib/libopencv_ml.dylib,
+					/usr/local/lib/libopencv_nonfree.dylib,
+					/usr/local/lib/libopencv_objdetect.dylib,
+					/usr/local/lib/libopencv_ocl.dylib,
+					/usr/local/lib/libopencv_photo.dylib,
+					/usr/local/lib/libopencv_stitching.dylib,
+					/usr/local/lib/libopencv_superres.dylib,
+					/usr/local/lib/libopencv_ts.dylib,
+					/usr/local/lib/libopencv_video.dylib,
+					/usr/local/lib/libopencv_videostab.dylib,
+					"-framework",
+					QtGui,
+					"-framework",
+					QtCore,
+					"-ltiff",
+					/Users/yanzixu/Downloads/Programs/Sources/BUILD_LIB/Release/libLAZARUS.a,
+					"-ltinyxml",
+					"-lKSVD3D",
+					"-lmlpack",
+					"-lxml2",
+					"-larmadillo",
+					"-lboost_system",
+					"-lboost_thread-mt",
+					"-liomp5",
+					"-lmkl_intel_thread",
+					"-lmkl_intel_lp64",
+					"-lmkl_core",
+					"-lPCAMKL",
+					"/usr/local/lib/libvtkgl2ps-6.1.1.dylib",
+					"-ldl",
+					"/usr/local/lib/libvtkexoIIc-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersParallel-6.1.1.dylib",
+					"/usr/local/lib/libvtkIONetCDF-6.1.1.dylib",
+					"/usr/local/lib/libvtkNetCDF_cxx-6.1.1.dylib",
+					"/usr/local/lib/libvtkNetCDF-6.1.1.dylib",
+					"/usr/local/lib/libvtkhdf5_hl-6.1.1.dylib",
+					"/usr/local/lib/libvtkhdf5-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersTexture-6.1.1.dylib",
+					"/usr/local/lib/libvtkGUISupportQt-6.1.1.dylib",
+					"-framework",
+					QtNetwork,
+					"/usr/local/lib/libvtkFiltersAMR-6.1.1.dylib",
+					"/usr/local/lib/libvtkParallelCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOLegacy-6.1.1.dylib",
+					"/usr/local/lib/libvtkGeovisCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOXML-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOGeometry-6.1.1.dylib",
+					"/usr/local/lib/libvtkjsoncpp-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOXMLParser-6.1.1.dylib",
+					"/usr/local/lib/libvtkexpat-6.1.1.dylib",
+					"/usr/local/lib/libvtkproj4-6.1.1.dylib",
+					"/usr/local/lib/libvtkViewsInfovis-6.1.1.dylib",
+					"/usr/local/lib/libvtkChartsCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonColor-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingContext2D-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingOpenGL-6.1.1.dylib",
+					"-framework",
+					AGL,
+					"-framework",
+					ApplicationServices,
+					"-framework",
+					IOKit,
+					"-framework",
+					Cocoa,
+					"/usr/local/lib/libvtkFiltersImaging-6.1.1.dylib",
+					"/usr/local/lib/libvtkInfovisLayout-6.1.1.dylib",
+					"/usr/local/lib/libvtkInfovisCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkViewsCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkInteractionWidgets-6.1.1.dylib",
+					"/usr/local/lib/libvtkImagingHybrid-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOImage-6.1.1.dylib",
+					"/usr/local/lib/libvtkDICOMParser-6.1.1.dylib",
+					"/usr/local/lib/libvtkIOCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkmetaio-6.1.1.dylib",
+					"/usr/local/lib/libvtkpng-6.1.1.dylib",
+					"/usr/local/lib/libvtktiff-6.1.1.dylib",
+					"/usr/local/lib/libvtkjpeg-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersHybrid-6.1.1.dylib",
+					"/usr/local/lib/libvtkImagingGeneral-6.1.1.dylib",
+					"/usr/local/lib/libvtkImagingSources-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersModeling-6.1.1.dylib",
+					"/usr/local/lib/libvtkInteractionStyle-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingAnnotation-6.1.1.dylib",
+					"/usr/local/lib/libvtkImagingColor-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingVolume-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingLabel-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingFreeType-6.1.1.dylib",
+					"/usr/local/lib/libvtkRenderingCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersExtraction-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersStatistics-6.1.1.dylib",
+					"/usr/local/lib/libvtkalglib-6.1.1.dylib",
+					"/usr/local/lib/libvtkImagingFourier-6.1.1.dylib",
+					"/usr/local/lib/libvtkImagingCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersGeometry-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersSources-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersGeneral-6.1.1.dylib",
+					"/usr/local/lib/libvtkFiltersCore-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonExecutionModel-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonComputationalGeometry-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonDataModel-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonMisc-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonTransforms-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonMath-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonSystem-6.1.1.dylib",
+					"/usr/local/lib/libvtkCommonCore-6.1.1.dylib",
+					"/usr/local/lib/libvtksys-6.1.1.dylib",
+					"/usr/local/lib/libvtkftgl-6.1.1.dylib",
+					"/usr/local/lib/libvtkfreetype-6.1.1.dylib",
+					"/usr/local/lib/libvtkzlib-6.1.1.dylib",
+					"-framework",
+					ApplicationServices,
+					"-framework",
+					CoreServices,
+					"-framework",
+					OpenGL,
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKgiftiio-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKLabelMap-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKQuadEdgeMesh-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKBiasCorrection-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKPolynomials-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKBioCell-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOSpatialObjects-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOXML-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKFEM-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKOptimizers-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOBMP-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOBioRad-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOGDCM-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkgdcmMSFF-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkopenjpeg-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkgdcmDICT-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkgdcmIOD-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKEXPAT-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkgdcmDSED-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkgdcmCommon-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOGIPL-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOJPEG-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOTIFF-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitktiff-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkjpeg-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOMeta-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKMetaIO-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIONIFTI-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKniftiio-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKznz-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIONRRD-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKNrrdIO-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOPNG-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkpng-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOSiemens-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOGE-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOIPL-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOStimulate-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOTransformHDF5-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkhdf5_cpp-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkhdf5-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkzlib-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOTransformInsightLegacy-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOTransformMatlab-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOTransformBase-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOVTK-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKKLMRegionGrowing-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKVTK-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKWatersheds-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKSpatialObjects-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKMesh-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKPath-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKStatistics-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkNetlibSlatec-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKIOImageBase-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKVideoCore-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKCommon-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkdouble-conversion-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitksys-4.5.1.dylib",
+					"-lm",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libITKVNLInstantiation-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkvnl_algo-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkv3p_lsqr-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkvnl-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkvcl-4.5.1.dylib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/lib/Release/libitkv3p_netlib-4.5.1.dylib",
+					"-lm",
+					"-framework",
+					QtGui,
+					"-framework",
+					QtCore,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = LazGUI;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yanzixu/Documents/LazGUI/BUILD;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		51B959A30D9244BA9286F8FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					QT_GUI_LIB,
+					QT_CORE_LIB,
+					ITK_IO_FACTORY_REGISTER_MANAGER,
+					"'vtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)'",
+					"'vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)'",
+					QT_NO_DEBUG,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/yanzixu/Documents/LazGUI/BUILD/ITKIOFactoryRegistration,
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Video/IO/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Video/Filtering/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Video/Core/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/TestKernel/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Nonunit/Review/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/Watersheds/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/Voronoi/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Bridge/VTK/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/SpatialFunction/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/RegistrationMethodsv4/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/RegionGrowing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/QuadEdgeMeshFiltering/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/NeuralNetworks/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/Metricsv4/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/Optimizersv4/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/MarkovRandomFieldsClassifiers/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/LevelSetsv4/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/LabelVoting/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/KLMRegionGrowing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageFusion/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/VTK/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/TransformMatlab/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/TransformInsightLegacy/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/TransformHDF5/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/TransformBase/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/Stimulate/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/Siemens/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/RAW/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/PNG/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/PNG/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/PNG/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/NRRD/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/NrrdIO/src/NrrdIO",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/NrrdIO/src/NrrdIO",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/NIFTI/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/Meta/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/Mesh/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/MRC/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/LSM/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/TIFF/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/TIFF/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/TIFF/src/itktiff",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/TIFF/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/JPEG/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/JPEG/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/JPEG/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/HDF5/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/GIPL/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/GE/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/IPL/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/GDCM/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/CSV/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/BioRad/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/BMP/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/HDF5/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/HDF5/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/GPUThresholding/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/GPUSmoothing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/GPUPDEDeformable/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/GPUCommon/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/GPUImageFilterBase/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/GPUAnisotropicSmoothing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/GPUFiniteDifference/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/GPUCommon/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GIFTI/src/gifticlib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/NIFTI/src/nifti/znzlib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/NIFTI/src/nifti/niftilib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/MessageExchangeDefinition",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/InformationObjectDefinition",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/Common",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/DataDictionary",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/MediaStorageAndFileFormat",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/GDCM/src/gdcm/Source/Common",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/GDCM",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/OpenJPEG/src/openjpeg",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/OpenJPEG/src/openjpeg",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/FEM/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/PDEDeformable/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/FEM/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/Common/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/SpatialObjects/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/XML/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/Expat/src/expat",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/Expat/src/expat",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/Eigen/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/DisplacementField/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/DiffusionTensorImage/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Denoising/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/DeformableMesh/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Deconvolution/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/DICOMParser/src/DICOMParser",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/DICOMParser/src/DICOMParser",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Convolution/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/FFT/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Colormap/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/Classifiers/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/BioCell/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/BiasCorrection/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/Polynomials/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/AntiAlias/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/LevelSets/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/SignedDistanceFunction/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/Optimizers/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageFeature/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageSources/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageGradient/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Smoothing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageCompare/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/FastMarching/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/QuadEdgeMesh/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/DistanceMap/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/NarrowBand/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/BinaryMathematicalMorphology/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/LabelMap/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/MathematicalMorphology/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/ConnectedComponents/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Thresholding/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageLabel/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageIntensity/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Path/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageStatistics/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/SpatialObjects/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/MetaIO/src/MetaIO",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/MetaIO/src/MetaIO",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/ZLIB/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/ZLIB/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/Mesh/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/ImageBase/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/IO/ImageBase",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageCompose/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/AnisotropicSmoothing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageGrid/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/ImageFunction/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/Transform/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/Statistics/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/Netlib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/ImageAdaptors/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/CurvatureFlow/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageFilterBase/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/FiniteDifference/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/Common/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/Core/Common",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/VNLInstantiation/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/VNL/src/vxl/core",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/VNL/src/vxl/vcl",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/VNL/src/vxl/v3p/netlib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/VNL/src/vxl/core",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/VNL/src/vxl/vcl",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/VNL/src/vxl/v3p/netlib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/KWSys/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/DoubleConversion/src/double-conversion",
+					/usr/local/include/opencv,
+					/usr/local/include,
+					/Library/Frameworks/QtGui.framework/Headers,
+					/Library/Frameworks/QtCore.framework/Headers,
+					"/usr/local/include/vtk-6.1",
+					/Users/yanzixu/Documents/LazGUI/BUILD,
+					/Users/yanzixu/Downloads/Programs/Sources,
+					/Users/yanzixu/Desktop/KSVD3D,
+					/usr/local/Cellar/tinyxml/2.6.2/include,
+					/Users/yanzixu/Documents/LazGUI/Deps/glm,
+					/usr/local/Cellar/mlpack/1.0.8/include,
+					/usr/local/Cellar/libxml2/2.9.1/include/libxml2,
+					/usr/local/Cellar/armadillo/4.300.3/include,
+					/Users/yanzixu/Desktop/PCAMKL,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yanzixu/Documents/LazGUI/BUILD;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		54916C849A594061BF3B4A48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk;
+				SYMROOT = /Users/yanzixu/Documents/LazGUI/BUILD/build;
+			};
+			name = Release;
+		};
+		899DDC83AB294CB2A95A86BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					QT_GUI_LIB,
+					QT_CORE_LIB,
+					ITK_IO_FACTORY_REGISTER_MANAGER,
+					"'vtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)'",
+					"'vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)'",
+					QT_NO_DEBUG,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/yanzixu/Documents/LazGUI/BUILD/ITKIOFactoryRegistration,
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Video/IO/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Video/Filtering/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Video/Core/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/TestKernel/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Nonunit/Review/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/Watersheds/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/Voronoi/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Bridge/VTK/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/SpatialFunction/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/RegistrationMethodsv4/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/RegionGrowing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/QuadEdgeMeshFiltering/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/NeuralNetworks/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/Metricsv4/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/Optimizersv4/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/MarkovRandomFieldsClassifiers/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/LevelSetsv4/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/LabelVoting/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/KLMRegionGrowing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageFusion/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/VTK/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/TransformMatlab/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/TransformInsightLegacy/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/TransformHDF5/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/TransformBase/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/Stimulate/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/Siemens/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/RAW/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/PNG/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/PNG/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/PNG/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/NRRD/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/NrrdIO/src/NrrdIO",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/NrrdIO/src/NrrdIO",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/NIFTI/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/Meta/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/Mesh/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/MRC/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/LSM/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/TIFF/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/TIFF/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/TIFF/src/itktiff",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/TIFF/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/JPEG/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/JPEG/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/JPEG/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/HDF5/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/GIPL/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/GE/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/IPL/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/GDCM/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/CSV/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/BioRad/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/BMP/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/HDF5/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/HDF5/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/GPUThresholding/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/GPUSmoothing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/GPUPDEDeformable/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/GPUCommon/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/GPUImageFilterBase/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/GPUAnisotropicSmoothing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/GPUFiniteDifference/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/GPUCommon/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GIFTI/src/gifticlib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/NIFTI/src/nifti/znzlib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/NIFTI/src/nifti/niftilib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/MessageExchangeDefinition",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/InformationObjectDefinition",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/Common",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/DataDictionary",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/GDCM/src/gdcm/Source/MediaStorageAndFileFormat",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/GDCM/src/gdcm/Source/Common",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/GDCM",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/OpenJPEG/src/openjpeg",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/OpenJPEG/src/openjpeg",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/FEM/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/PDEDeformable/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/FEM/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Registration/Common/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/SpatialObjects/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/XML/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/Expat/src/expat",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/Expat/src/expat",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/Eigen/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/DisplacementField/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/DiffusionTensorImage/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Denoising/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/DeformableMesh/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Deconvolution/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/DICOMParser/src/DICOMParser",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/DICOMParser/src/DICOMParser",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Convolution/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/FFT/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Colormap/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/Classifiers/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/BioCell/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/BiasCorrection/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/Polynomials/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/AntiAlias/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/LevelSets/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/SignedDistanceFunction/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/Optimizers/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageFeature/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageSources/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageGradient/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Smoothing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageCompare/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/FastMarching/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/QuadEdgeMesh/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/DistanceMap/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/NarrowBand/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/BinaryMathematicalMorphology/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/LabelMap/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/MathematicalMorphology/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Segmentation/ConnectedComponents/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Thresholding/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageLabel/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageIntensity/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/Path/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageStatistics/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/SpatialObjects/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/MetaIO/src/MetaIO",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/MetaIO/src/MetaIO",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/ZLIB/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/ZLIB/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/Mesh/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/IO/ImageBase/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/IO/ImageBase",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageCompose/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/AnisotropicSmoothing/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageGrid/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/ImageFunction/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/Transform/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Numerics/Statistics/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/Netlib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/ImageAdaptors/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/CurvatureFlow/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Filtering/ImageFilterBase/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/FiniteDifference/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/Core/Common/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/Core/Common",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/VNLInstantiation/include",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/VNL/src/vxl/core",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/VNL/src/vxl/vcl",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/VNL/src/vxl/v3p/netlib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/VNL/src/vxl/core",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/VNL/src/vxl/vcl",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/VNL/src/vxl/v3p/netlib",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD/Modules/ThirdParty/KWSys/src",
+					"/Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/Modules/ThirdParty/DoubleConversion/src/double-conversion",
+					/usr/local/include/opencv,
+					/usr/local/include,
+					/Library/Frameworks/QtGui.framework/Headers,
+					/Library/Frameworks/QtCore.framework/Headers,
+					"/usr/local/include/vtk-6.1",
+					/Users/yanzixu/Documents/LazGUI/BUILD,
+					/Users/yanzixu/Downloads/Programs/Sources,
+					/Users/yanzixu/Desktop/KSVD3D,
+					/usr/local/Cellar/tinyxml/2.6.2/include,
+					/Users/yanzixu/Documents/LazGUI/Deps/glm,
+					/usr/local/Cellar/mlpack/1.0.8/include,
+					/usr/local/Cellar/libxml2/2.9.1/include/libxml2,
+					/usr/local/Cellar/armadillo/4.300.3/include,
+					/Users/yanzixu/Desktop/PCAMKL,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yanzixu/Documents/LazGUI/BUILD;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A4FCA6FEC444D3193B5E225 /* Build configuration list for PBXNativeTarget "LazGUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27787C23231747C4B2EED7F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8341DA5060464DBF89A6997D /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				899DDC83AB294CB2A95A86BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8EB8BAB0E9049F8ACBEB269 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51B959A30D9244BA9286F8FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6036B399DF24144B80C01C8 /* Build configuration list for PBXProject "LazGUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54916C849A594061BF3B4A48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4479E4E71C494E53B2AEBBE4 /* Project object */;
+}
