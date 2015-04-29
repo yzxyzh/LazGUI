@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1338</width>
-    <height>784</height>
+    <height>798</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,6 +22,9 @@
       <width>491</width>
       <height>491</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
      <string/>
@@ -128,6 +131,35 @@
      </rect>
     </property>
    </widget>
+   <widget class="QLabel" name="infoLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>730</y>
+      <width>981</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Idle</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>730</y>
+      <width>541</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -144,6 +176,9 @@
     </property>
     <addaction name="actionPhaseScript"/>
     <addaction name="actionSaveScript"/>
+    <addaction name="actionSaveAllCaches"/>
+    <addaction name="actionDeleteAllCaches"/>
+    <addaction name="actionMassiveTest"/>
    </widget>
    <addaction name="menuOptions"/>
   </widget>
@@ -164,6 +199,21 @@
   <action name="actionSaveScript">
    <property name="text">
     <string>SaveScript</string>
+   </property>
+  </action>
+  <action name="actionSaveAllCaches">
+   <property name="text">
+    <string>SaveAllCaches</string>
+   </property>
+  </action>
+  <action name="actionDeleteAllCaches">
+   <property name="text">
+    <string>DeleteAllCaches</string>
+   </property>
+  </action>
+  <action name="actionMassiveTest">
+   <property name="text">
+    <string>MassiveTest</string>
    </property>
   </action>
  </widget>

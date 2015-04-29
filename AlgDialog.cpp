@@ -147,10 +147,6 @@ void AlgDialog::RunAlg()
     newUnit.inputVarsFull="";
     newUnit.outputVarsFull="";
     newUnit.procName=algName;
-//    newUnit.inVars.clear();
-//    newUnit.outVars.clear();
-//    newUnit.inDefVals.clear();
-//    newUnit.outDefVals.clear();
     for (int i=0; i<inSize; i++) {
         //Set inNames;
         if("<NEW>" == inNames[i]->currentText())

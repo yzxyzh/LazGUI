@@ -10,8 +10,346 @@
 #include <tinyxml.h>
 #include <QFileDialog>
 
+#include "AlgSolver.h"
+#include <QThread>
+
+#include <QTextCursor>
+#include "ExperimentDialog.h"
+
+//#include <build-in>
+
 using namespace Lazarus;
 
+//void cb_concrate(int code, string message)
+//{
+//    qobject_cast<MainWindow*>(QApplication::topLevelWidgets()[0])->UpdateResourceManager();
+//}
+
+void MainWindow::MassiveTest()
+{
+//    if(isScriptSaved)
+//    {
+//        ShowError("请先保存脚本");
+//        return;
+//    }
+//    
+//    LazScript copy = LazGUI::Pool::Script;
+    
+   //FIXME 这是测试做的，倒时候请修复
+    LazScript copy;
+    AnalysisScript("/Users/yanzixu/Documents/header_test.lazScript", copy);
+    
+    ExperimentDialog dlg;
+    dlg.SetScript(copy);
+    dlg.exec();
+}
+
+void MainWindow::ShowError(QString errorMsg)
+{
+    QMessageBox msg;
+    msg.setText(errorMsg);
+    msg.exec();
+}
+
+bool MainWindow::PhaseOneScriptCondition(const scriptUnit &inUnit,QString& error_msg,bool from_cache,QString baseName)
+{
+    //phase script,and collect garbage;
+    error_msg = "";
+    vector<string> newInstances;
+    scriptUnit copy = inUnit;
+    
+    bool return_type=true;
+    
+    //首先检测哪些实例是新的，这样后续可以无条件释放这些实例
+    for (int i=0; i<inUnit.inVars.size(); i++) {
+        if(!WatchDog::InstanceExist(inUnit.inVars[i])) newInstances.push_back(inUnit.inVars[i]);
+    }
+    
+    for (int i=0; i<inUnit.outVars.size(); i++) {
+        if(!WatchDog::InstanceExist(inUnit.outVars[i])) newInstances.push_back(inUnit.outVars[i]);
+    }
+    
+    try{
+        
+        if(!from_cache
+           || !LazGUI::CanPharseCache(copy, baseName.toStdString())
+           || !LazGUI::PhaseOneScriptFromCache(copy, baseName.toStdString()))
+        {
+            return_type = PhaseOneScript(inUnit);
+        }
+    }
+    catch(std::string& laz_exception_str)
+    {
+        string currentException;
+        currentException="ERROR! Exception Get : "+laz_exception_str;
+        error_msg = QString::fromStdString(currentException);
+        //garbage collector;
+        for (int i=0; i<newInstances.size(); i++) {
+            WatchDog::DeleteInstance(newInstances[i]);
+        }
+        
+        return false;
+    }
+    catch( itk::ExceptionObject & err )
+    {
+        string itkExcept=(string)err.GetFile()+"Has Error"+(string)err.what();
+        error_msg = QString::fromStdString(itkExcept);
+        //garbage collector;
+        for (int i=0; i<newInstances.size(); i++) {
+            WatchDog::DeleteInstance(newInstances[i]);
+        }
+        return false;
+    }
+    catch(std::exception& err)
+    {
+        error_msg = QString::fromStdString(err.what());
+        //garbage collector;
+        for (int i=0; i<newInstances.size(); i++) {
+            WatchDog::DeleteInstance(newInstances[i]);
+        }
+        return false;
+    }
+    catch(...)
+    {
+        error_msg = "Unknown";
+        //garbage collector;
+        for (int i=0; i<newInstances.size(); i++) {
+            WatchDog::DeleteInstance(newInstances[i]);
+        }
+        return false;
+    }
+
+    //如果脚本出错，自动回收垃圾
+    if(!return_type)
+    {
+        for (int i=0; i<newInstances.size(); i++) {
+            WatchDog::DeleteInstance(newInstances[i]);
+        }
+    }
+    
+    return return_type;
+    
+}
+
+bool MainWindow::phase_first_script_threaded()
+{
+    //GUI_BEGIN
+    //Lazarus::scriptUnit old_unit = LazGUI::Pool::ScriptTmp.front();
+    Lazarus::scriptUnit unit = LazGUI::Pool::ScriptTmp.front();
+    QFileInfo finfo(QString::fromStdString(scriptName));
+    QString baseName = finfo.baseName();
+    bool result = false;
+    QString error_msg;
+    
+    if(LazGUI::Pool::is_reading_from_cache)
+    {
+        result = PhaseOneScriptCondition(unit, error_msg,true,baseName);
+    }else{
+        result = PhaseOneScriptCondition(unit, error_msg);
+    }
+    
+    if(!result)
+    {
+        ShowError(error_msg);
+        this->isScriptSaved = false;
+        this->scriptName = "";
+        return false;
+    }
+    
+    UpdateResourceManager();
+    
+    return true;
+}
+
+void MainWindow::phase_next_script_threaded(int code,QString error_msg)
+{
+    //首先判断是否出错
+    if(code == 1)
+    {
+        ShowError(error_msg);
+        this->isScriptSaved = false;
+        this->scriptName = "";
+        return;
+    }
+    
+    UpdateResourceManager();
+
+    QFileInfo finfo(QString::fromStdString(scriptName));
+    QString baseName = finfo.baseName();
+    
+    Lazarus::scriptUnit old_unit = LazGUI::Pool::ScriptTmp.front();
+    
+    LazGUI::Pool::Script.push_back(old_unit);
+    LazGUI::Pool::alg_counter++;
+    
+    //执行下一步：
+    LazGUI::Pool::ScriptTmp.pop_front();//退出队列最前端的那个脚本
+    
+    if(LazGUI::Pool::ScriptTmp.size() == 0)
+    {
+        //如果没有脚本那就是执行完毕了
+        ui->infoLabel->setText("Script running finished");
+        ui->progressBar->setValue(0);
+        return;
+    }
+    
+    ui->progressBar->setValue(ui->progressBar->value()+1);
+    
+    Lazarus::scriptUnit unit = LazGUI::Pool::ScriptTmp.front();
+    //如果该操作涉及到GUI问题，那么这就必须要在主线程中执行
+    if(LazGUI::Pool::gui_operations.end() !=std::find(LazGUI::Pool::gui_operations.begin(), LazGUI::Pool::gui_operations.end(), unit.procName))
+    {
+        bool result;
+        QString current_error;
+        if(LazGUI::Pool::is_reading_from_cache)
+        {
+            result = PhaseOneScriptCondition(unit, current_error,true,baseName);
+        }else{
+            result = PhaseOneScriptCondition(unit, current_error);
+        }
+        if(!result)
+        {
+            ShowError(current_error);
+            return;
+        }
+        LazGUI::Pool::Script.push_back(unit);
+        LazGUI::Pool::alg_counter++;
+        UpdateResourceManager();
+
+        ui->progressBar->setValue(ui->progressBar->value()+1);
+        LazGUI::Pool::ScriptTmp.pop_front();
+        if(LazGUI::Pool::ScriptTmp.size() == 0)
+        {
+            //如果没有脚本那就是执行完毕了
+            ui->infoLabel->setText("Script running finished");
+            ui->progressBar->setValue(0);
+            return;
+        }
+    }
+
+    //执行多线程
+    
+    QThread* thread = new QThread;
+    ScriptReader* solver = new ScriptReader(baseName);
+    solver->moveToThread(thread);
+    connect(thread, SIGNAL(started()), solver, SLOT(process()));
+    connect(solver, SIGNAL(finished(int,QString)), this, SLOT(phase_next_script_threaded(int,QString)));
+    connect(solver, SIGNAL(finished(int,QString)), thread, SLOT(quit()));
+    connect(solver, SIGNAL(finished(int,QString)), solver, SLOT(deleteLater()));
+    connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+    thread->start();
+    
+}
+
+
+void MainWindow::alg_start(QString msg)
+{
+    QString color_msg = "<font color = 'blue'>"+msg+"</font>";
+    this->ui->infoLabel->setText(color_msg);
+    ui->progressBar->setValue(0.5*ui->progressBar->maximum());
+}
+
+void MainWindow::alg_end(QString msg)
+{
+    QString color_msg = "<font color = 'red'>"+msg+"</font>";
+    this->ui->infoLabel->setText(color_msg);
+    ui->progressBar->setValue(0);
+}
+
+void MainWindow::alg_error(QString msg)
+{
+    //cout<<"GOT!"<<endl;
+    QMessageBox msgbox;
+    msgbox.setText(msg);
+    msgbox.setStandardButtons(QMessageBox::Yes|QMessageBox::No);
+    msgbox.exec();
+}
+
+bool MainWindow::PhaseOneScriptFromCache(const scriptUnit& inUnit,const string& baseName)
+{
+    cout<<"********************Caching Sentence ********************"<<endl;
+    cout<<"Current Procedure name  = "<<inUnit.procName<<endl;
+    
+    //const vector<Instance> * instList = WatchDog::ReturnInstanceList();
+    
+    
+    
+    if (WatchDog::ProcedureExist(inUnit.procName))
+    {
+        algIOTypes curProcIO=WatchDog::GetIoType(inUnit.procName);
+        string inputVariables;
+        cout<<"InVar Size = "<<inUnit.inVars.size()<<endl;
+        for (int j=0;j<inUnit.inVars.size();j++)
+        {
+            
+            string instance_name = inUnit.inVars[j];
+            
+            bool is_inst_cached = (isVarCached.end()!=isVarCached.find(instance_name));
+            
+            const string cache_name = baseName+"/"+instance_name+".cache";
+            cout<<"read from cache "<<cache_name<<endl;
+            ///如果找到实例，就说明之前已经创建过了，因此不用再次赋值。
+            ///如果没有找到，那么就必须创建，并且进行赋值
+            WatchDog::CreateInstance(curProcIO.inTypes[j],inUnit.inVars[j]);
+            
+            if(is_inst_cached) cout<<"instance has already been cached"<<endl;
+            
+            if(!is_inst_cached)
+            {
+                
+                
+                bool load_cache_res = WatchDog::GetInstance(inUnit.inVars[j]).objPtr->LoadCache(cache_name);
+                
+                if(!load_cache_res)
+                {
+                    return false;
+                }else{
+                    isVarCached.insert(std::make_pair(instance_name, true));
+                }
+                
+            }
+            
+        }
+        cout<<"outVar Size = "<<inUnit.outVars.size()<<endl;
+        for (int j=0;j<inUnit.outVars.size();j++)
+        {
+            string instance_name = inUnit.outVars[j];
+            const string cache_name = baseName+"/"+instance_name+".cache";
+            cout<<"read from cache "<<cache_name<<endl;
+            bool is_inst_cached = (isVarCached.end()!=isVarCached.find(instance_name));
+            
+            WatchDog::CreateInstance(curProcIO.outTypes[j],inUnit.outVars[j]);
+            
+            if(is_inst_cached) cout<<"instance has already been cached"<<endl;
+            if(!is_inst_cached)
+            {
+                //输出的实例是无需赋初值的，因为是输出就一定会有值。
+               
+                bool load_cache_res = WatchDog::GetInstance(inUnit.outVars[j]).objPtr->LoadCache(cache_name);
+                
+                if(!load_cache_res){
+                    return false;
+                }else{
+                    isVarCached.insert(std::make_pair(instance_name, true));
+                }
+                
+            }
+
+            //WatchDog::GetInstance(WatchDog::currentScript[i].outVars[j]).objPtr->SetValue(WatchDog::currentScript[i].outDefVals[j]);
+        }
+        
+        cout<<"********************Caching Complete ********************"<<endl;
+    }else{
+        WatchDog::WriteLog(Lazarus::Exception::FireException(LAZ_ERROR_USERSPEC,"Procedure not exist in preread Lazarus algorithm list! Maybe you forget to copy it here?"),LOG_NEXTLINE,true,true);
+        return false;
+    }
+    
+    return true;
+
+    
+    
+    
+}
 
 bool MainWindow::PhaseOneScript(const Lazarus::scriptUnit& inUnit)
 {
@@ -132,9 +470,69 @@ void MainWindow::on_actionSaveScript_triggered()
     QString saveName=QFileDialog::getSaveFileName(this,"Save Script","","LazScript (*.lazScript)");
     if("" != saveName)
         doc->SaveFile(saveName.toStdString());
-    
+
+    this->isScriptSaved = true;
+    scriptName = saveName.toStdString();
+
     delete doc;
     
+}
+
+
+void MainWindow::on_actionSaveAllCaches_triggered()
+{
+    if(LazGUI::Pool::is_alg_running)
+    {
+        QMessageBox msgbox;
+        msgbox.setText("请等待后台算法运行完毕！");
+        msgbox.exec();
+        return;
+    }
+    
+    
+    if(!isScriptSaved)
+    {
+        QMessageBox msgbox;
+        msgbox.setText("保存所有cache之前请先保存脚本！");
+        msgbox.exec();
+        return;
+    }
+
+    //只要把watchdog里面的内容全部存一遍就可以了
+    
+    vector<Instance>* instList = WatchDog::ReturnInstanceList();
+    int size = instList->size();
+    ui->progressBar->setMaximum(size);
+    
+    if(size>0)
+    isSavingCache = true;
+    
+    for (int i=0; i<size; i++) {
+    
+        string inst_name = instList->at(i).name;
+        
+    QThread* thread = new QThread;
+    CacheSaver* solver = new CacheSaver(scriptName,inst_name);
+    solver->moveToThread(thread);
+    connect(thread, SIGNAL(started()), solver, SLOT(process()));
+    connect(solver, SIGNAL(started()), this, SLOT(CacheStart()));
+    //connect(solver, SIGNAL(finished()), this, SLOT(CacheEnd()));
+    connect(solver, SIGNAL(finished()), thread, SLOT(quit()));
+    connect(solver, SIGNAL(finished()), solver, SLOT(deleteLater()));
+    connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+    connect(solver, SIGNAL(progress(double,QString,int)), this, SLOT(UpdateCacheStatus(double,QString,int)));
+    thread->start();
+        
+    //sleep(100000);
+
+    }
+    //vector<Lazarus::Instance>* instList = WatchDog::ReturnInstanceList();
+
+}
+
+void MainWindow::on_actionDeleteAllCaches_triggered()
+{
+
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *)
@@ -221,14 +619,16 @@ void MainWindow::UpdatePropertiesWindow(const string &inFileName, int dim)
         int nCols = img->GetLayerData(0).cols;
         int layer = img->GetLayer();
         Mat* Ptr=img->GetData();
-        double minVal=0;
+        double minVal=99999;
 		double maxVal=-1;
 		for (int z=0;z<layer;z++)
 		{
+            double currentMinVal=99999;
 			double currentMaxVal=-1;
-			cv::minMaxLoc(Ptr[z],&minVal,&currentMaxVal);
+			cv::minMaxLoc(Ptr[z],&currentMinVal,&currentMaxVal);
 			if (currentMaxVal>maxVal)
 				maxVal=currentMaxVal;
+            if (currentMinVal<minVal) minVal = currentMinVal;
 		}
         //设置名称
         ui->PropertiesShow->insertRow(0);
@@ -409,6 +809,8 @@ void MainWindow::on_UpperThres_sliderMoved(int position)
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
+    isScriptSaved(false),
+    scriptName(""),
     maxLayer(-1),
     currentLayer(0),
     imgRows(-1),
@@ -420,7 +822,12 @@ MainWindow::MainWindow(QWidget *parent) :
     addMaskAction(NULL),
     RMBMenu(NULL),
     removeItem(NULL),
+isSavingCache(false),
+isReadingScript(false),
+    //algThread(nullptr),
     ui(new Ui::MainWindow)
+
+
 {
     ui->setupUi(this);
     this->grabKeyboard();
@@ -433,9 +840,13 @@ MainWindow::MainWindow(QWidget *parent) :
     addMaskAction = new QAction(this);
     addBaseImgAction = new QAction(this);
     showInformationAction = new QAction(this);
+    saveCacheAction = new QAction(this);
+    loadCacheAction = new QAction(this);
     addMaskAction ->setText("作为mask插入");
     addBaseImgAction->setText("作为基准图像插入");
     showInformationAction->setText("显示详细信息");
+    saveCacheAction->setText("储存快照");
+    loadCacheAction->setText("读取快照");
     
     removeItem = new QAction(this);
     removeItem->setText("移除显示对象");
@@ -457,25 +868,47 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->LowerThres->setMaximum(255);
     ui->UpperThres->setMaximum(255);
     ui->UpperThres->setSliderPosition(255);
-    
+
+    ui->progressBar->setValue(0);
+    ui->progressBar->setMaximum(100);
+    ui->progressBar->setMinimum(0);
+
     
     connect(showInformationAction, SIGNAL(triggered()), this, SLOT(ShowInfomation()));
     QObject::connect(addMaskAction, SIGNAL(triggered()), this, SLOT(on_actionAddMaskAction_triggered()));
     QObject::connect(addBaseImgAction, SIGNAL(triggered()), this, SLOT(on_actionAddBaseImgAction_triggered()));
-
+    connect(saveCacheAction,SIGNAL(triggered()),this,SLOT(on_saveCache()));
+    connect(loadCacheAction,SIGNAL(triggered()),this,SLOT(on_loadCache()));
     
     //RMBMenu->addAction(addBaseImgAction);
     //RMBMenu->addAction(addMaskAction);
     ui->ResourceManager->addAction(addMaskAction);
     ui->ResourceManager->addAction(addBaseImgAction);
     ui->ResourceManager->addAction(showInformationAction);
+    ui->ResourceManager->addAction(saveCacheAction);
+    ui->ResourceManager->addAction(loadCacheAction);
     ui->ResourceManager->setContextMenuPolicy(Qt::ActionsContextMenu);
     
     ui->StackShow->addAction(removeItem);
     ui->StackShow->setContextMenuPolicy(Qt::ActionsContextMenu);
     
+    //更新需要GUI的算法
+//    this->gui_operations = {"OPT_ADJUST_MASK_WND","OPT_ADJUST_THRES_2D_WND",
+//    "OPT_CREATE_GE_WINDOW","OPT_CREATE_WND_2DIMAGE","OPT_CREATE_WND_3DIMAGE","OPT_GDCM_IN",
+//    "OPT_GET_MASK_2D_FROM_2D_WND","OPT_GET_MASK_3D_FROM_3D_WND","OPT_POINT_CLOUD_VISUALIZE",
+//    "OPT_READ_2D_GRAY_IMAGE","OPT_READ_DICOM_ITK","OPT_READ_MHD_ITK","OPT_READ_SERIES_IMAGES",
+//    "OPT_SAVE_3D_IMAGE_TO_BMPS","OPT_SAVE_MHD","OPT_SHOW_HIST"};
+    
+    //FIXME  这边要删了！
+//    LazScript newScript;
+//    AnalysisScript("/Users/yanzixu/Documents/完整的血管分割流程.lazScript", newScript);
+//    ExperimentDialog* dlg = new ExperimentDialog;
+//    dlg->SetScript(newScript);
+//    dlg->exec();
     
     connect(removeItem, SIGNAL(triggered()), this, SLOT(RemoveItem()));
+    connect(ui->actionMassiveTest, SIGNAL(triggered()), this, SLOT(MassiveTest()));
+
    }
 
 MainWindow::~MainWindow()
@@ -599,6 +1032,157 @@ void MainWindow::UpdateScene()
         ui->ImageViewer->setPixmap(p.scaled(width, height,Qt::IgnoreAspectRatio));
     }
 }
+
+void MainWindow::UpdateCacheStatus(double percentage, QString msg, int code)
+{
+    int pos = ui->progressBar->value();
+    pos++;
+    ui->progressBar->setValue(pos);
+    if(code == 0)//失败了用红色
+    {
+        //QString show_msg = "<font color = 'red'>"+msg+"\n </font>";
+        QString show_msg = msg +"\n";
+        logs=logs+show_msg;
+    }
+    else
+    {
+        //QString show_msg = "<font color = 'blue'>"+msg+"\n </font>";
+        QString show_msg = msg +"\n";
+        logs=logs+show_msg;
+    }
+
+    ui->cmdShow->setText(logs);
+    QTextCursor c = ui->cmdShow->textCursor();
+    c.movePosition(QTextCursor::End);
+    ui->cmdShow->setTextCursor(c);
+    
+    if(ui->progressBar->value()>=ui->progressBar->maximum())
+    {
+        isSavingCache = false;
+        CacheEnd();
+    }
+
+}
+
+void MainWindow::CacheStart()
+{
+    logs.clear();
+    ui->infoLabel->setText("<font color = 'blue'>Begin Caching .... </font>");
+    ui->cmdShow->setText(logs);
+}
+
+void MainWindow::CacheEnd()
+{
+    ui->infoLabel->setText("<font color = 'red'>Caching finished.... </font>");
+    ui->progressBar->setValue(0);
+}
+
+void MainWindow::on_saveCache()
+{
+    if(!isScriptSaved)
+    {
+        QMessageBox msgBox;
+        msgBox.setText("储存cache : 请首先保存一下脚本！");
+        msgBox.exec();
+        return;
+    }
+
+    if(0 == ui->ResourceManager->selectedItems().size()) return;
+    GUI_BEGIN
+
+        QTreeWidgetItem* selectedItem=ui->ResourceManager->selectedItems()[0];
+        //如果选择的是父节点那么就要返回
+        if(nullptr == selectedItem->parent()) return;
+
+        string instance_name=selectedItem->text(0).toStdString();
+        Instance inst=WatchDog::GetInstance(instance_name);//找不到会抛出异常的
+
+        QDir dir;
+        QFileInfo file(QString::fromStdString(scriptName));
+        QString dir_name = file.baseName();
+    
+        cout<<dir_name.toStdString()<<endl;
+    
+
+        if(!dir.exists(dir_name))
+            //QDir::mkpath(QString::fromStdString(scriptName));
+            dir.mkpath(dir_name);
+
+        const string cache_name = dir_name.toStdString()+"/"+instance_name+".cache";
+        bool cache_saved = inst.objPtr->SaveCache(cache_name);
+
+        if(!cache_saved)
+        {
+            QMessageBox msgBox;
+            msgBox.setText("cache failed");
+            msgBox.exec();
+            return;
+        }else
+        {
+            QString str = "instance " + QString::fromStdString(instance_name)+ " cache completed";
+            alg_end(str);
+        }
+
+
+    GUI_END
+    
+}
+
+void MainWindow::on_loadCache()
+{
+    if(!isScriptSaved)
+    {
+        QMessageBox msgBox;
+        msgBox.setText("储存cache : 请首先保存一下脚本！");
+        msgBox.exec();
+        return;
+    }
+    
+    //cout<<"loading..."<<endl;
+
+    if(0 == ui->ResourceManager->selectedItems().size()) return;
+    GUI_BEGIN
+
+        QTreeWidgetItem* selectedItem=ui->ResourceManager->selectedItems()[0];
+        //如果选择的是父节点那么就要返回
+        if(nullptr == selectedItem->parent()) return;
+
+        string instance_name=selectedItem->text(0).toStdString();
+        Instance inst=WatchDog::GetInstance(instance_name);//找不到会抛出异常的
+
+        //QDir dir;
+
+        //if(!dir.exists(QString::fromStdString(scriptName)))
+            //dir.mkdir(QString::fromStdString(scriptName));
+
+    QFileInfo file(QString::fromStdString(scriptName));
+    QString dir_name = file.baseName();
+
+
+        const string cache_name = dir_name.toStdString()+"/"+instance_name+".cache";
+        //cout<<cache_name<<endl;
+        bool cache_saved = inst.objPtr->LoadCache(cache_name);
+
+        if(!cache_saved)
+        {
+            QMessageBox msgBox;
+            msgBox.setText("load cache failed");
+            msgBox.exec();
+            QString str = "instance " + QString::fromStdString(instance_name)+ " load cache failed";
+            alg_end(str);
+            return;
+        }else
+        {
+            QString str = "instance " + QString::fromStdString(instance_name)+ " load cache completed";
+            alg_end(str);
+        }
+
+
+    GUI_END
+    
+    
+}
+
 void MainWindow::InsertBaseImg(const string &name,int dim)
 {
     //insert basic images;
@@ -674,6 +1258,34 @@ void MainWindow::InsertMask(const string &name,int dim)
     GUI_END
 }
 //开始读取脚本
+
+bool MainWindow::CanPharseCache(Lazarus::scriptUnit &unit, const string &baseName)
+{
+    if(unit.procName == "" || baseName == "") return false;
+    
+    const string path = baseName + "/";
+    int in_size = unit.inVars.size();
+    int out_size = unit.outVars.size();
+    
+    QFile file;
+    
+    for (int i=0; i<in_size; i++) {
+        string currentName = unit.inVars[i];
+        string file_name = path+currentName+".cache";
+        if(!file.exists(QString::fromStdString(file_name))) return false;
+    }
+    
+    for (int i=0; i<out_size; i++) {
+        string currentName = unit.outVars[i];
+        string file_name = path+currentName+".cache";
+        if(!file.exists(QString::fromStdString(file_name))) return false;
+    }
+    
+    return true;
+}
+
+//为了防止读取脚本出错，uncached的脚本还是按顺序执行,cached的脚本可以后台多线程直接从数据中拉取结果
+//换言之，主线程读取uncached的脚本，分线程读取cached的脚本
 void MainWindow::on_actionPhaseScript_triggered()
 {
     QString fileName = QFileDialog::getOpenFileName(this,"Open Script","","LazScript (*.lazScript)");
@@ -681,25 +1293,115 @@ void MainWindow::on_actionPhaseScript_triggered()
     
     if(!fileName.isEmpty())
     {
+        QDir dir;
+        QFileInfo finfo(fileName);
+        QString baseName = finfo.baseName();
+        
+        bool is_cache_exist = dir.exists(baseName);
+        
+        bool is_reading_from_cache = false;
+        
+        if(is_cache_exist)
+        {
+            QMessageBox msgBox;
+            msgBox.addButton(QMessageBox::Ok);
+            msgBox.addButton(QMessageBox::Cancel);
+            msgBox.setText("找到该脚本的快照，是否从快照读取？");
+            if(QMessageBox::Ok == msgBox.exec())
+            {
+                is_reading_from_cache = true;
+            }
+        }
+        
+        LazGUI::Pool::is_reading_from_cache = is_reading_from_cache;
+        
         LazGUI::Pool::Script.clear();
+
         LazGUI::Pool::alg_counter=0;
         WatchDog::DumpMemory();
         
         LazScript newScript;
         
-        if(!AnalysisScript(fileName.toStdString(),newScript)) return;
-        
-        //LazGUI::Pool::alg_counter=LazGUI::Pool::Script.size();
-        
-        for (int i=0; i<newScript.size(); i++) {
-            PhaseOneScript(newScript[i]);
-            LazGUI::Pool::Script.push_back(newScript[i]);
-            LazGUI::Pool::alg_counter++;
-            UpdateResourceManager();
+        if(!AnalysisScript(fileName.toStdString(),newScript))
+        {
+            QMessageBox msgBox;
+            msgBox.addButton(QMessageBox::Ok);
+            msgBox.addButton(QMessageBox::Cancel);
+            msgBox.setText("脚本有误！");
+            return;
         }
         
+        this->isScriptSaved = true;
+        this->scriptName = fileName.toStdString();
+        
+//        vector<scriptUnit> cached_script;
+//        vector<scriptUnit> uncached_script;
+//        if(is_cache_exist)
+//        {
+//            for (int i=0; i<newScript.size(); i++) {
+//                Lazarus::scriptUnit unit = newScript[i];
+//                bool can_cache = CanPharseCache(unit, baseName.toStdString());
+//                if(can_cache)
+//                    cached_script.push_back(unit);
+//                else
+//                    uncached_script.push_back(unit);
+//                
+//            }
+//            
+//            //下面读取cached
+//            
+//            
+//            
+//        }
+        
+        //下面开始读取脚本；
+        
+        LazGUI::Pool::CachedVarName.clear();
+        for (int i=0; i<newScript.size(); i++) {
+            LazGUI::Pool::ScriptTmp.push_back(newScript[i]);
+        }
+        
+        ui->progressBar->setMaximum(newScript.size());
+        //先把第一个脚本送进去
+        if(phase_first_script_threaded()) phase_next_script_threaded(0, "");
+
+        
+        
+        //isVarCached.resize(newScript.size(),false);
+//        isVarCached.clear();
+//        
+//        
+//        for (int i=0; i<newScript.size(); i++) {
+//            
+//            if(is_cache_exist)
+//            {
+//                Lazarus::scriptUnit unit = newScript[i];
+//                bool can_cache = CanPharseCache(unit, baseName.toStdString());
+//                bool cache_success = true;
+//                if(can_cache)
+//                {
+//                    cache_success = PhaseOneScriptFromCache(unit, baseName.toStdString());
+//                }
+//                if(!cache_success || !can_cache)
+//                {
+//                    cout<<"cache failed! running in normal..."<<endl;
+//                    PhaseOneScript(newScript[i]);
+//                }else{
+//                    cout<<"Cache Complete!"<<endl;
+//                }
+//            }
+//            else
+//            {
+//                PhaseOneScript(newScript[i]);
+//            }
+//            LazGUI::Pool::Script.push_back(newScript[i]);
+//            LazGUI::Pool::alg_counter++;
+//            UpdateResourceManager();
+//        }
+//        
     }
-    
+//
+
     
     GUI_END
 }
@@ -848,6 +1550,12 @@ void MainWindow::UpdateAlgBrowser()
     //cout<<"AlgCount = "<<algCount<<endl;
 }
 
+void MainWindow::UpdateRes()
+{
+    //QMessageBox::warning(this, "AAAAA", "aaaaa");
+    UpdateResourceManager();
+}
+
 void MainWindow::on_AlgSelector_textChanged()
 {
     filter=ui->AlgSelector->toPlainText();
@@ -857,6 +1565,23 @@ void MainWindow::on_AlgSelector_textChanged()
 void MainWindow::on_AlgBrowser_doubleClicked(const QModelIndex &index)
 {
     GUI_BEGIN
+    
+    if(LazGUI::Pool::is_alg_running)
+    {
+        QMessageBox msgBox;
+        msgBox.setText("有算法正在执行，请等待算法执行完毕再运行别的算法！");
+        msgBox.exec();
+        return;
+    }
+    
+    if(isSavingCache)
+    {
+        QMessageBox msgBox;
+        msgBox.setText("正在保存快照，请等待保存完以后在进行更改！");
+        msgBox.exec();
+        return;
+    }
+    
     int selectedRow=index.row();
     QString selected_name=ui->AlgBrowser->item(selectedRow)->text();
     int old_scrip_num=LazGUI::Pool::Script.size();
@@ -865,23 +1590,50 @@ void MainWindow::on_AlgBrowser_doubleClicked(const QModelIndex &index)
     //cout<<LazGUI::Pool::Script.size()<<endl;
     if(LazGUI::Pool::Script.size()>old_scrip_num)
     {
-    PhaseOneScript(LazGUI::Pool::Script.back());
-    cout<<"OK"<<endl;
-    UpdateResourceManager();
+        scriptUnit unit = LazGUI::Pool::Script.back();
+        if(LazGUI::Pool::gui_operations.end()!=std::find(LazGUI::Pool::gui_operations.begin(), LazGUI::Pool::gui_operations.end(), unit.procName))//functions required gui features must be done in main thread:
+        {
+            bool result;
+            QString error_msg;
+            result = PhaseOneScriptCondition(unit, error_msg,false);
+            if(!result)
+            {
+                ShowError(error_msg);
+                LazGUI::Pool::Script.pop_back();
+                LazGUI::Pool::alg_counter--;
+            }
+            UpdateResourceManager();
+        }
+        else
+        {
+            QThread* thread = new QThread;
+            AlgSolver* solver = new AlgSolver;
+            solver->moveToThread(thread);
+            connect(thread, SIGNAL(started()), solver, SLOT(process()));
+            connect(solver, SIGNAL(finished()), this, SLOT(UpdateRes()));
+            connect(solver, SIGNAL(end(QString)), this, SLOT(alg_end(QString)));
+            connect(solver, SIGNAL(error(QString)), this, SLOT(alg_error(QString)));
+            connect(solver, SIGNAL(finished()), thread, SLOT(quit()));
+            connect(solver, SIGNAL(finished()), solver, SLOT(deleteLater()));
+            connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+            connect(solver, SIGNAL(start(QString)), this, SLOT(alg_start(QString)));
+            thread->start();
+        }
     }
-    return;
-    //FIXME
-    //next a algorithm selection box will pop up.
-    //cout<<selected_name.toStdString()<<endl;
-    GUI_END
     
-    //如果说在try里跳出了，那就会执行到这儿
-    LazGUI::Pool::Script.pop_back();
-    LazGUI::Pool::alg_counter--;
+    GUI_END
+
 }
 
 void MainWindow::UpdateResourceManager()
 {
+//    if(nullptr != algThread)
+//    {
+//        algThread->join();
+//        delete algThread;
+//        algThread = nullptr;
+//    }
+    
     //use tree structures to show current scripts;
     //注意，中间修改了参数值的话，后面所有的脚本全部要重新做一遍。
     ui->ResourceManager->clear();
@@ -992,6 +1744,8 @@ void MainWindow::on_actionAddBaseImgAction_triggered()
 
 void MainWindow::on_ResourceManager_itemChanged(QTreeWidgetItem *item, int column)
 {
+
+    
     switch (column) {
         case 0:
         {
@@ -1019,6 +1773,28 @@ void MainWindow::on_ResourceManager_itemChanged(QTreeWidgetItem *item, int colum
                 old_name=LazGUI::Pool::Script[index].inVars[child_index];
             }
             
+            if(LazGUI::Pool::is_alg_running)
+            {
+                QMessageBox msgBox;
+                msgBox.setText("有算法正在执行，修改文字描述无效！");
+                msgBox.exec();
+                item->setText(0, QString::fromStdString(old_name));
+                //UpdateResourceManager();
+                //QMessageBox::information(this, , "ERROR!");
+                return;
+            }
+            
+            if(isSavingCache)
+            {
+                QMessageBox msgBox;
+                msgBox.setText("正在保存cache!不能修改变量名！");
+                msgBox.exec();
+                item->setText(0, QString::fromStdString(old_name));
+                //UpdateResourceManager();
+                //QMessageBox::information(this, , "ERROR!");
+                return;
+            }
+            
             if(WatchDog::InstanceExist(new_name))
             {
                 myWarning(实例名称已经存在);
@@ -1026,6 +1802,7 @@ void MainWindow::on_ResourceManager_itemChanged(QTreeWidgetItem *item, int colum
                 return;
             }
             
+
             
             
             //下面要修改所有与之同名的实例和watchdog里面的名称

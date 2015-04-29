@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ExperimentDialog</class>
+ <widget class="QDialog" name="ExperimentDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>511</width>
+    <height>801</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTreeWidget" name="pathList">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <column>
+      <property name="text">
+       <string>路径集</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTreeWidget" name="pathDetail">
+     <column>
+      <property name="text">
+       <string>详细路径</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTreeWidget" name="scriptBinder">
+     <column>
+      <property name="text">
+       <string>绑定脚本行号</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDockWidget" name="dockWidget">
+     <widget class="QWidget" name="dockWidgetContents">
+      <widget class="QPushButton" name="addPathBtn">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>20</y>
+         <width>114</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Add Path</string>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="runBtn">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>114</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>RUN</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="exitBtn">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>20</y>
+         <width>114</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>quit</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="saveBtn">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>20</y>
+         <width>114</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>save</string>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="globalProgress">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>421</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="value">
+        <number>24</number>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="localProgress">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>100</y>
+         <width>421</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="value">
+        <number>24</number>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
