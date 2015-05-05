@@ -172,7 +172,7 @@ void MainWindow::phase_next_script_threaded(int code,QString error_msg)
         return;
     }
     
-    UpdateResourceManager();
+    
 
     QFileInfo finfo(QString::fromStdString(scriptName));
     QString baseName = finfo.baseName();
@@ -181,6 +181,8 @@ void MainWindow::phase_next_script_threaded(int code,QString error_msg)
     
     LazGUI::Pool::Script.push_back(old_unit);
     LazGUI::Pool::alg_counter++;
+    
+    UpdateResourceManager();
     
     //执行下一步：
     LazGUI::Pool::ScriptTmp.pop_front();//退出队列最前端的那个脚本
@@ -197,8 +199,10 @@ void MainWindow::phase_next_script_threaded(int code,QString error_msg)
     
     Lazarus::scriptUnit unit = LazGUI::Pool::ScriptTmp.front();
     //如果该操作涉及到GUI问题，那么这就必须要在主线程中执行
-    if(LazGUI::Pool::gui_operations.end() !=std::find(LazGUI::Pool::gui_operations.begin(), LazGUI::Pool::gui_operations.end(), unit.procName))
+    while (LazGUI::Pool::gui_operations.end() !=std::find(LazGUI::Pool::gui_operations.begin(), LazGUI::Pool::gui_operations.end(), unit.procName))
     {
+        cout<<"this procedure must be processed in main thread"<<endl;
+        
         bool result;
         QString current_error;
         if(LazGUI::Pool::is_reading_from_cache)
@@ -215,7 +219,6 @@ void MainWindow::phase_next_script_threaded(int code,QString error_msg)
         LazGUI::Pool::Script.push_back(unit);
         LazGUI::Pool::alg_counter++;
         UpdateResourceManager();
-
         ui->progressBar->setValue(ui->progressBar->value()+1);
         LazGUI::Pool::ScriptTmp.pop_front();
         if(LazGUI::Pool::ScriptTmp.size() == 0)
@@ -225,6 +228,8 @@ void MainWindow::phase_next_script_threaded(int code,QString error_msg)
             ui->progressBar->setValue(0);
             return;
         }
+        unit = LazGUI::Pool::ScriptTmp.front();
+        cout<<"main thread procedure running complete."<<endl;
     }
 
     //执行多线程
@@ -1562,6 +1567,11 @@ void MainWindow::on_AlgSelector_textChanged()
     UpdateAlgBrowser();
 }
 
+void MainWindow::AlgRun()
+{
+
+}
+
 void MainWindow::on_AlgBrowser_doubleClicked(const QModelIndex &index)
 {
     GUI_BEGIN
@@ -1587,6 +1597,7 @@ void MainWindow::on_AlgBrowser_doubleClicked(const QModelIndex &index)
     int old_scrip_num=LazGUI::Pool::Script.size();
     AlgDialog dlg(this,selected_name.toStdString());
     dlg.exec();
+    
     //cout<<LazGUI::Pool::Script.size()<<endl;
     if(LazGUI::Pool::Script.size()>old_scrip_num)
     {
@@ -1596,6 +1607,9 @@ void MainWindow::on_AlgBrowser_doubleClicked(const QModelIndex &index)
             bool result;
             QString error_msg;
             result = PhaseOneScriptCondition(unit, error_msg,false);
+            
+            //cout<<"running finished."<<endl;
+            
             if(!result)
             {
                 ShowError(error_msg);
@@ -1603,6 +1617,8 @@ void MainWindow::on_AlgBrowser_doubleClicked(const QModelIndex &index)
                 LazGUI::Pool::alg_counter--;
             }
             UpdateResourceManager();
+            //getchar();
+            //cout<<"update finished."<<endl;
         }
         else
         {

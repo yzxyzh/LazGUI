@@ -72,6 +72,9 @@ public:
     
     bool CanPharseCache(Lazarus::scriptUnit& unit,const string& baseName);
     
+    //如果在slot里面执行算法似乎VTK会崩溃，也不知道是什么原因。。。
+    void AlgRun();
+    
 protected:
 
     bool            isScriptSaved;

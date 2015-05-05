@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForCStrings(codec);
     //QTextCodec::setCodecForTr(codec);
     MainWindow w;
+    //w.showFullScreen();
     w.show();
 
     return a.exec();
