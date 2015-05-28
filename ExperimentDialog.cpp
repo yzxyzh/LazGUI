@@ -24,13 +24,99 @@
 
 #include "bindDlg.h"
 
+#include "GenPathDialog.h"
+
+
 using namespace std;
+
+void ExperimentDialog::GeneratePath()
+{
+    vector<string> pathNameLists;
+    for (int i=0; i<pathes.size(); i++) {
+        pathNameLists.push_back(pathes[i].name);
+    }
+    
+    GenPathDialog a(this,pathNameLists);
+    
+    if(QDialog::Accepted == a.exec())
+    {
+        a.GenerateData();
+        
+        auto iter = std::find(pathNameLists.begin(), pathNameLists.end(), a.pathName);
+        if(iter == pathNameLists.end()) return;
+        
+        int dist = std::distance(pathNameLists.begin(), iter);
+        
+        int pathSize = pathes[dist].list.size();
+        
+        pathSet newPathSet;
+        newPathSet.is_path = a.isAbsolutePath;
+        newPathSet.name = a.newName;
+        newPathSet.list.clear();
+        
+        //打开一个路径
+        QString basePathName = QFileDialog::getExistingDirectory(NULL, "Open Directory",
+                                                         "/home",
+                                                         QFileDialog::ShowDirsOnly| QFileDialog::DontResolveSymlinks);
+        //如果是绝对路径的话，我们需要创建一系列的路径
+        if(newPathSet.is_path)
+        {
+            for (int i=0; i<pathSize; i++) {
+                
+                QString newDir = basePathName+"/"+QString::fromStdString(boost::lexical_cast<string>(i));
+                QDir dir;
+                dir.mkdir(newDir);
+                
+                newPathSet.list.push_back(newDir.toStdString());
+            }
+        }else{
+            for (int i=0;i<pathSize; i++) {
+                
+                string newDir = basePathName.toStdString()+"/"+boost::lexical_cast<string>(i)+"."+a.extName;
+                newPathSet.list.push_back(newDir);
+                
+            }
+        }
+        
+        this->pathes.push_back(newPathSet);
+        
+        UpdatePathList();
+        
+    }
+}
 
 void ExperimentDialog::ShowError(QString msg)
 {
     QMessageBox msgBox;
     msgBox.setText(msg);
     msgBox.exec();
+}
+
+void ExperimentDialog::OpenPath()
+{
+    QString filename = QFileDialog::getOpenFileName(this,"open path","","path file (*.txt)");
+    
+    string filenameStr = filename.toStdString();
+    
+    if("" == filenameStr) return;
+    
+    std::ifstream fs(filenameStr,ios::in|ios::binary);
+    
+    pathSet newSet;
+    fs>>newSet.name;
+    fs>>newSet.is_path;
+    int size;
+    fs>>size;
+    
+    for (int i=0; i<size; i++) {
+        string specPath;
+        fs>>specPath;
+        newSet.list.push_back(specPath);
+    }
+    
+    pathes.push_back(newSet);
+    
+    UpdatePathList();
 }
 
 void ExperimentDialog::AnalyseScriptBinding()
@@ -282,6 +368,9 @@ ui(new Ui::ExperimentDialog)
     connect(ui->saveBtn, SIGNAL(clicked()), this, SLOT(SaveFile()));
     connect(ui->runBtn, SIGNAL(clicked()), this, SLOT(Run()));
     
+    connect(ui->readPathBtn, SIGNAL(clicked()), this, SLOT(OpenPath()));
+    
+    connect(ui->GeneratePathBtn, SIGNAL(clicked()), this, SLOT(GeneratePath()));
     
     
     ReadData();

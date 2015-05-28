@@ -10,12 +10,12 @@ set(CMAKE_CONFIGURATION_TYPES "Release")
 set(ITK_DIR /Users/yanzixu/Downloads/Programs/InsightToolkit-4.5.2/BUILD)
 
 set(src_header mainwindow.h AlgDialog.h AlgSolver.h ParallelTest.h ExperimentDialog.h
-	newPathDlg.h bindDlg.h) 
+	newPathDlg.h bindDlg.h GenPathDialog.h) 
 
 set(src_source cvqtconverter.cpp main.cpp mainwindow.cpp AlgDialog.cpp AlgSolver.cpp 
-	ParallelTest.cpp ExperimentDialog.cpp newPathDlg.cpp bindDlg.cpp)
+	ParallelTest.cpp ExperimentDialog.cpp newPathDlg.cpp bindDlg.cpp GenPathDialog.cpp)
 
-set(src_ui mainwindow.ui ExperimentDialog.ui newPathDlg.ui bindDlg.ui)
+set(src_ui mainwindow.ui ExperimentDialog.ui newPathDlg.ui bindDlg.ui GenPathDialog.ui)
 
 set(normal_header cvqtconverter.h GUITypes.h )
 

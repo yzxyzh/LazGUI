@@ -85,6 +85,10 @@ public slots:
     void Run();
     void ParallelTestCallBack(int code,QString errorMsg);
     void ParallelTestAllDone();
+    void OpenPath();
+    
+    
+    void GeneratePath();//用现有的路径生成一个新的人造路径。
     
 };
 

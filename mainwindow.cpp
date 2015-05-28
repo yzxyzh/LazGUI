@@ -16,6 +16,8 @@
 #include <QTextCursor>
 #include "ExperimentDialog.h"
 
+#include <QScrollBar>
+
 //#include <build-in>
 
 using namespace Lazarus;
@@ -27,21 +29,44 @@ using namespace Lazarus;
 
 void MainWindow::MassiveTest()
 {
+    
+    GUI_BEGIN
+    
+    QString fileName = QFileDialog::getOpenFileName(this,"Open Script","","LazScript (*.lazScript)");
+    string scriptName = fileName.toStdString();
+    
+    LazScript newScript;
+    if(!AnalysisScript(scriptName, newScript))
+    {
+        ShowError("can not load spec script!");
+        return;
+    }
+    
+    
 //    if(isScriptSaved)
 //    {
 //        ShowError("请先保存脚本");
 //        return;
 //    }
-//    
-//    LazScript copy = LazGUI::Pool::Script;
+    
+//    if(0 == LazGUI::Pool::Script.size())
+//    {
+//        ShowError("Please read script first");
+//        return;
+//    }
+    
+   
+    //LazScript copy = LazGUI::Pool::Script;
     
    //FIXME 这是测试做的，倒时候请修复
-    LazScript copy;
-    AnalysisScript("/Users/yanzixu/Documents/header_test.lazScript", copy);
+//    LazScript copy;
+//    AnalysisScript("/Users/yanzixu/Documents/header_test.lazScript", copy);
     
     ExperimentDialog dlg;
-    dlg.SetScript(copy);
+    dlg.SetScript(newScript);
     dlg.exec();
+    
+    GUI_END
 }
 
 void MainWindow::ShowError(QString errorMsg)
@@ -1702,6 +1727,18 @@ void MainWindow::UpdateResourceManager()
         //cout<<"Script "<<i<<" OK!"<<endl;
     }
     
+    int maxVal = ui->ResourceManager->verticalScrollBar()->maximum();
+    ui->ResourceManager->verticalScrollBar()->setValue(maxVal);
+    
+//    QTreeWidgetItem* itm = ui->ResourceManager->topLevelItem(ui->ResourceManager->topLevelItemCount()-1);
+//    
+//    
+//    QTreeWidgetItem* itmLast;
+//    if(itm->childCount() > 0)
+//        itmLast = itm->child(itm->childCount()-1);
+//    else
+//        itmLast = itm;
+//    ui->ResourceManager->scrollToItem(itmLast);
     //cout<<"ALL OK!"<<endl;
 }
 void MainWindow::on_actionAddMaskAction_triggered()

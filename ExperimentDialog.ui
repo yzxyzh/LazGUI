@@ -79,7 +79,7 @@
         <string>RUN</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="exitBtn">
+      <widget class="QPushButton" name="GeneratePathBtn">
        <property name="geometry">
         <rect>
          <x>220</x>
@@ -89,7 +89,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>quit</string>
+        <string>Gen Path</string>
        </property>
       </widget>
       <widget class="QPushButton" name="saveBtn">
@@ -109,7 +109,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>70</y>
+         <y>100</y>
          <width>421</width>
          <height>23</height>
         </rect>
@@ -122,13 +122,26 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>100</y>
+         <y>130</y>
          <width>421</width>
          <height>23</height>
         </rect>
        </property>
        <property name="value">
         <number>24</number>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="readPathBtn">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>60</y>
+         <width>114</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Read Path</string>
        </property>
       </widget>
      </widget>
