@@ -26,8 +26,27 @@
 
 #include "GenPathDialog.h"
 
+#include "duppathdlg.h"
 
 using namespace std;
+
+
+void ExperimentDialog::DupPath()
+{
+    DupPathDlg dlg;
+    if(QDialog::Accepted == dlg.exec())
+    {
+        pathSet newSet;
+        newSet.name = dlg.GetName();
+        newSet.is_path = dlg.isAbsolutePath;
+        
+        for (int i=0; i<dlg.GetDupNums(); i++) {
+            newSet.list.push_back(dlg.pathInfo);
+        }
+        
+        pathes.push_back(newSet);
+    }
+}
 
 void ExperimentDialog::GeneratePath()
 {
@@ -111,7 +130,11 @@ void ExperimentDialog::OpenPath()
     for (int i=0; i<size; i++) {
         string specPath;
         fs>>specPath;
-        newSet.list.push_back(specPath);
+        
+        string decodedPath;
+        Decode(specPath, decodedPath);
+        
+        newSet.list.push_back(decodedPath);		
     }
     
     pathes.push_back(newSet);
@@ -372,6 +395,7 @@ ui(new Ui::ExperimentDialog)
     
     connect(ui->GeneratePathBtn, SIGNAL(clicked()), this, SLOT(GeneratePath()));
     
+    connect(ui->dupPathBtn, SIGNAL(clicked()), this, SLOT(DupPath()));
     
     ReadData();
     

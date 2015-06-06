@@ -87,6 +87,8 @@ public slots:
     void ParallelTestAllDone();
     void OpenPath();
     
+    void DupPath();
+    
     
     void GeneratePath();//用现有的路径生成一个新的人造路径。
     

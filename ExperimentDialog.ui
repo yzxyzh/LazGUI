@@ -144,6 +144,19 @@
         <string>Read Path</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="dupPathBtn">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>60</y>
+         <width>114</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Dup Path</string>
+       </property>
+      </widget>
      </widget>
     </widget>
    </item>
