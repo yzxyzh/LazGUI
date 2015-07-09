@@ -28,6 +28,7 @@
 
 #include "duppathdlg.h"
 
+
 using namespace std;
 
 
@@ -45,6 +46,8 @@ void ExperimentDialog::DupPath()
         }
         
         pathes.push_back(newSet);
+        
+        UpdatePathList();
     }
 }
 
